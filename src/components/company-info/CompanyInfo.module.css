@@ -1,0 +1,26 @@
+.infoBlock {
+    @apply mt-[30px];
+}
+.infoBlock span {
+    @apply text-mainTextColor text-[23px] font-bold;
+}
+
+.info {
+    @apply mt-3;
+}
+.info li {
+    @apply mt-2.5;
+}
+.info li a {
+    @apply flex items-center gap-2;
+}
+.info li a svg {
+    @apply w-6 h-6 text-mainBlueColor;
+}
+
+.socialMedia {
+    @apply flex items-center gap-[15px] mt-5;
+}
+.socialMedia svg {
+    @apply w-14 h-14;
+}

@@ -1,4 +1,4 @@
-export default function ServiceSlug() {
+export default function Service() {
     return <div>
         Service Slug Page
     </div>

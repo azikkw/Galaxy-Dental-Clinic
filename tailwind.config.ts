@@ -9,10 +9,17 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
-      },
-    },
+        mainTextColor: "#27313F",
+        secondTextColor: "#4D5662",
+        mainBlueColor: "#0D9DDF",
+        secondBlueColor: "#E7F6FE",
+        thirdBlueColor: "#5F84B0",
+        greenColor: "#4BBC5C",
+        redColor: "#F64242",
+        beigeColor:"#FCD6A3",
+        mainBorderColor: "#E1E5EB"
+      }
+    }
   },
   plugins: [],
 };

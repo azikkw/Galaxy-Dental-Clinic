@@ -1,0 +1,6 @@
+.footer {
+    @apply px-[15px] pt-10 pb-[110px] text-[17px] relative border-t border-mainBorderColor;
+}
+.company {
+    @apply w-full h-[70px] flex items-center justify-center absolute left-0 bottom-0 mt-4 border-t border-mainBorderColor text-mainTextColor font-bold;
+}

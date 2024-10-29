@@ -1,0 +1,7 @@
+.menu {
+    @apply w-full h-dvh pt-[70px] px-[15px] fixed left-0 top-0 z-[2] bg-white text-[17px];
+}
+.menu:before {
+    content: "";
+    @apply w-full h-[1px] block absolute left-0 top-[70px] bg-mainBorderColor;
+}
