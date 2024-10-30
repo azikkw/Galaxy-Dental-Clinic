@@ -10,7 +10,7 @@ export default function Header() {
 
     const [menuOpen, setMenuOpen] = useState(false);
 
-    return <div className="">
+    return <div>
         <header className="w-full flex items-center justify-between p-[15px] fixed top-0 left-0 z-[3] backdrop-blur-[20px]">
             <Link href="/">
                 <Image src="/images/logo.png" alt="Galaxy Dental Clinic" width="170" height="36"/>
