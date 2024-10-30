@@ -1,5 +1,13 @@
-import UseBreadcrumb from "@/components/ui/useBreadcrumb";
-import Title from "@/components/ui/title";
+"use client";
+
+import React from "react";
+import { useParams } from "next/navigation";
+import Image from "next/image";
+import UseBreadcrumb from "@/components/ui/UseBreadcrumb";
+import Title from "@/components/ui/Title";
+import { getService, ServicesInterface } from "@/data/services";
+import { doctors, DoctorInterface } from "@/data/doctors";
+import DoctorCard from "@/components/ui/DoctorCard";
 
 const breadcrumbs = [
     { label: "Главная", url: "/" },
@@ -8,8 +16,30 @@ const breadcrumbs = [
 ]
 
 export default function Service() {
-    return <main className="min-h-dvh px-[15px] pt-[110px]">
+
+    const params = useParams<{serviceId: string}>();
+    const service: ServicesInterface = getService(params.serviceId);
+
+    breadcrumbs[2].label = service.name;
+
+    const availableDoctors: DoctorInterface[] = doctors.filter((doctor) => doctor.services?.includes(service.id));
+
+    return <main className="min-h-dvh px-[15px] pt-[110px] mb-[150px]">
         <UseBreadcrumb breadcrumbs={breadcrumbs}/>
-        <Title title="Хирургия"/>
+        <div className="bg-fourthBlueColor h-[540px] rounded-b-[20px] absolute left-0 top-0 -z-[1] pt-[150px] px-[15px]">
+            <Title title={service.name} className="text-[33px] mb-1"/>
+            <span className="text-lg">{service.description}</span>
+            <Image src={service.img} alt={service.name} width={500} height={500} className="absolute right-0 bottom-0 object-cover rounded-b-[20px]" />
+        </div>
+        <div className="mt-[500px]">
+            <Title title="Лечащие врачи" className="text-[33px] mb-7"/>
+            <div>
+                {
+                    availableDoctors.map((doctor) => (
+                        <DoctorCard key={doctor.id} doctor={doctor}/>
+                    ))
+                }
+            </div>
+        </div>
     </main>
 }

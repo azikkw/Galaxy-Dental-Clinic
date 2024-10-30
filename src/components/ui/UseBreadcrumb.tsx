@@ -1,5 +1,5 @@
 import React from "react";
-import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
+import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/Breadcrumb";
 
 interface Breadcrumbs {
     breadcrumbs: {
@@ -9,7 +9,7 @@ interface Breadcrumbs {
 }
 
 const UseBreadcrumb: React.FC<Breadcrumbs> = ({ breadcrumbs }) => {
-    return <Breadcrumb className="mb-1">
+    return <Breadcrumb>
         <BreadcrumbList>
             {
                 breadcrumbs.map((breadcrumb, index) => (

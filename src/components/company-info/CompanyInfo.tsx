@@ -1,19 +1,20 @@
 import React from "react";
 import styles from "./CompanyInfo.module.css";
 import Link from "next/link";
-import { InstagramLinkIcon, LocationIcon, PhoneIcon, TelegramLinkIcon, TimeIcon, WhatsappLinkIcon, AppointmentIcon } from "@/app/assets/icons";
+import { LocationIcon, PhoneIcon, TimeIcon, AppointmentIcon } from "@/app/assets/defaultIcons";
+import { InstagramLinkIcon, TelegramLinkIcon, WhatsappLinkIcon } from "@/app/assets/socialMedia";
 
-export default function CompanyInfo() {
+export default function CompanyInfo({ onClose }: { onClose?: () => void }) {
     return <React.Fragment>
         <div className={styles.infoBlock}>
             <span>Информация</span>
             <ul className={styles.info}>
-                <li><Link href="/#about">О Нас</Link></li>
-                <li><Link href={"/doctors"}>Наши врачи</Link></li>
-                <li><Link href="/#feedback">Отзывы</Link></li>
-                <li><Link href={"/services"}>Услуги</Link></li>
-                <li><Link href="/#promotions">Акции и скидки</Link></li>
-                <li><Link href="/#contacts">Контакты</Link></li>
+                <li><Link href="/#about" onClick={onClose}>О Нас</Link></li>
+                <li><Link href={"/doctors"} onClick={onClose}>Наши врачи</Link></li>
+                <li><Link href="/#feedback" onClick={onClose}>Отзывы</Link></li>
+                <li><Link href={"/services"} onClick={onClose}>Услуги</Link></li>
+                <li><Link href="/#promotions" onClick={onClose}>Акции и скидки</Link></li>
+                <li><Link href="/#contacts" onClick={onClose}>Контакты</Link></li>
             </ul>
         </div>
         <div className={styles.infoBlock}>
