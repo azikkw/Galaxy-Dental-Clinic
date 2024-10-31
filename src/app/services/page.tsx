@@ -1,7 +1,7 @@
-import UseBreadcrumb from "@/components/ui/UseBreadcrumb";
 import Title from "@/components/ui/Title";
+import UseBreadcrumb from "@/components/ui/breadcrumb/UseBreadcrumb";
+import ServiceCard from "@/components/pages/ServiceCard";
 import { services } from "@/data/services";
-import ServiceCard from "@/components/ui/ServiceCard";
 
 const breadcrumbs = [
     { label: "Главная", url: "/" },

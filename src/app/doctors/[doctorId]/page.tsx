@@ -5,7 +5,7 @@ import { useParams } from "next/navigation";
 import Image from "next/image";
 import Rating from "@/components/ui/Rating";
 import Title from "@/components/ui/Title";
-import UseBreadcrumb from "@/components/ui/UseBreadcrumb";
+import UseBreadcrumb from "@/components/ui/breadcrumb/UseBreadcrumb";
 import { DoctorInterface, getDoctor } from "@/data/doctors";
 
 const breadcrumbs = [

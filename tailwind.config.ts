@@ -18,6 +18,7 @@ const config: Config = {
   			thirdBlueColor: '#5F84B0',
 			fourthBlueColor: '#F1F8FF',
   			greenColor: '#4BBC5C',
+			carouselButtonColor: '#004080',
   			redColor: '#F64242',
   			beigeColor: '#FCD6A3',
   			mainBorderColor: '#E1E5EB',

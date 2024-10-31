@@ -3,11 +3,11 @@
 import React from "react";
 import { useParams } from "next/navigation";
 import Image from "next/image";
-import UseBreadcrumb from "@/components/ui/UseBreadcrumb";
+import UseBreadcrumb from "@/components/ui/breadcrumb/UseBreadcrumb";
+import DoctorCard from "@/components/pages/DoctorCard";
 import Title from "@/components/ui/Title";
 import { getService, ServicesInterface } from "@/data/services";
 import { doctors, DoctorInterface } from "@/data/doctors";
-import DoctorCard from "@/components/ui/DoctorCard";
 
 const breadcrumbs = [
     { label: "Главная", url: "/" },

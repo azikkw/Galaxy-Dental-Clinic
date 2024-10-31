@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import Menu from "@/components/menu/Menu";
+import Menu from "@/components/layout/menu/Menu";
 import { CloseIcon, InstagramIcon, MenuIcon } from "@/app/assets/defaultIcons";
 
 export default function Header() {
@@ -13,7 +13,7 @@ export default function Header() {
 
     return <header>
         <div className="w-full flex items-center justify-between p-[15px] fixed top-0 left-0 z-[3] backdrop-blur-[20px]">
-            <Link href="/">
+            <Link href="/public">
                 <Image src="/images/logo.png" alt="Galaxy Dental Clinic" width="170" height="36"/>
             </Link>
             <div className="flex items-center gap-2">
