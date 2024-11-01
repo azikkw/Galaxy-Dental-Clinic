@@ -12,12 +12,12 @@ export default function Doctors() {
     return <main className="min-h-dvh px-[15px] pt-[110px] mb-[150px]">
         <UseBreadcrumb breadcrumbs={breadcrumbs}/>
         <Title title="Наши врачи" className="text-[33px] mt-1 mb-7 -ml-0.5"/>
-        <div className="sm:grid sm:grid-cols-3 sm:justify-between">
+        <section className="sm:grid sm:grid-cols-3 sm:justify-between">
             {
                 doctors.map((doctor) => (
                     <DoctorCard key={doctor.id} doctor={doctor}/>
                 ))
             }
-        </div>
+        </section>
     </main>
 }

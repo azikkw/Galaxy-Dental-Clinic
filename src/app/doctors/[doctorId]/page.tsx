@@ -23,7 +23,7 @@ export default function Doctor() {
 
     return <main className="min-h-dvh px-[15px] pt-[110px]">
         <UseBreadcrumb breadcrumbs={breadcrumbs}/>
-        <div className="mt-7 sm:mt-8 sm:flex sm:items-center sm:gap-8">
+        <section className="mt-7 sm:mt-8 sm:flex sm:items-center sm:gap-8">
             <div className="w-[160px] h-[160px] overflow-hidden rounded-full border border-[#D8DCE4]">
                 <Image src={doctor.img} alt={doctor.name} width={200} height={200} className="scale-150 mt-8"/>
             </div>
@@ -32,7 +32,10 @@ export default function Doctor() {
                 <span className="text-lg">{doctor.type} / Стаж {doctor.experience} лет</span>
                 <Rating amount={5} ratingClassName="gap-1.5 mt-2.5" starClassName="w-5 h-5"/>
             </div>
-        </div>
-        <Title title="До / После" className="text-[33px] mt-16 mb-7"/>
+        </section>
+        <section>
+            <Title title="До / После" className="text-[33px] mt-16 mb-7"/>
+
+        </section>
     </main>
 }

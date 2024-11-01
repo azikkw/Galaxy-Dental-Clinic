@@ -26,12 +26,12 @@ export default function Service() {
 
     return <main className="min-h-dvh px-[15px] pt-[110px] mb-[150px]">
         <UseBreadcrumb breadcrumbs={breadcrumbs}/>
-        <div className="bg-fourthBlueColor h-[540px] rounded-b-[20px] absolute left-0 top-0 -z-[1] pt-[150px] px-[15px]">
+        <section className="bg-fourthBlueColor h-[540px] rounded-b-[20px] absolute left-0 top-0 -z-[1] pt-[150px] px-[15px]">
             <Title title={service.name} className="text-[33px] mb-1"/>
             <span className="text-lg">{service.description}</span>
             <Image src={service.img} alt={service.name} width={500} height={500} className="absolute right-0 bottom-0 object-cover rounded-b-[20px]" />
-        </div>
-        <div className="mt-[500px]">
+        </section>
+        <section className="mt-[500px]">
             <Title title="Лечащие врачи" className="text-[33px] mb-7"/>
             <div>
                 {
@@ -40,6 +40,6 @@ export default function Service() {
                     ))
                 }
             </div>
-        </div>
+        </section>
     </main>
 }

@@ -204,7 +204,7 @@ const CarouselPrevious = React.forwardRef<
       variant={variant}
       size={size}
       className={cn(
-        "h-11 w-11 rounded-full bg-gray-400",
+        "rounded-full bg-gray-400",
         className
       )}
       disabled={!canScrollPrev}
@@ -230,7 +230,7 @@ const CarouselNext = React.forwardRef<
       variant={variant}
       size={size}
       className={cn(
-        "h-11 w-11 rounded-full bg-carouselButtonColor",
+        "rounded-full bg-carouselButtonColor",
         className
       )}
       disabled={!canScrollNext}
