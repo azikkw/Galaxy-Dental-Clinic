@@ -1,19 +1,19 @@
 import React from "react";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel/Carousel";
-import DoctorCard from "@/components/pages/DoctorCard";
 import { DoctorInterface } from "@/data/doctors";
 
 interface UseCarouselProps {
-    data: DoctorInterface[]
+    data: DoctorInterface[],
+    renderItem: (item: DoctorInterface) => React.ReactNode
 }
 
-const UseCarousel: React.FC<UseCarouselProps> = ({ data }) => {
+const UseCarousel: React.FC<UseCarouselProps> = ({ data, renderItem }) => {
     return <Carousel>
         <CarouselContent>
             {
-                data.map((doctor) => (
-                    <CarouselItem key={doctor.id} className="md:basis-1/2 lg:basis-[27%]">
-                        <DoctorCard doctor={doctor}/>
+                data.map((item) => (
+                    <CarouselItem key={item.id} className="md:basis-1/2 lg:basis-[27%]">
+                        {renderItem(item)}
                     </CarouselItem>
                 ))
             }

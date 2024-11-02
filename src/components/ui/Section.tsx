@@ -1,13 +1,13 @@
 import React from "react";
-import { cn } from "@/lib/utils";
 
 interface SectionProps {
     children: React.ReactNode,
-    className?: string
+    className?: string,
+    id?: string
 }
 
-const Section: React.FC<SectionProps> = ({ children, className }) => {
-    return <section className={cn("mb-[100px]", className)}>
+const Section: React.FC<SectionProps> = ({ children, className, id }) => {
+    return <section id={id} className={className}>
         {children}
     </section>
 }

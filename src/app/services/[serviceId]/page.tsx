@@ -5,7 +5,7 @@ import { useParams } from "next/navigation";
 import Image from "next/image";
 import MainBlock from "@/components/ui/MainBlock";
 import UseBreadcrumb from "@/components/ui/breadcrumb/UseBreadcrumb";
-import DoctorCard from "@/components/pages/DoctorCard";
+import DoctorCard from "@/components/card/DoctorCard";
 import Title from "@/components/ui/Title";
 import { getService, ServicesInterface } from "@/data/services";
 import { doctors, DoctorInterface } from "@/data/doctors";

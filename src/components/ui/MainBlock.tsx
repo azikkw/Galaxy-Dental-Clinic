@@ -7,7 +7,7 @@ interface MainBlockProps {
 }
 
 const MainBlock: React.FC<MainBlockProps> = ({ children, className }) => {
-    return <main className={cn("min-h-dvh px-[15px] pt-[110px] mb-[150px]", className)}>
+    return <main className={cn("min-h-dvh flex flex-col px-[15px] pt-[110px] mb-[150px]", className)}>
         {children}
     </main>
 }

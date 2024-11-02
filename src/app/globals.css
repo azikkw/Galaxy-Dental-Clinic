@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-  @apply font-sans font-[500] text-secondTextColor;
+  @apply font-sans font-[500] text-secondTextColor scroll-smooth;
 }
 
 ul {

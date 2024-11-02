@@ -1,7 +1,7 @@
 import MainBlock from "@/components/ui/MainBlock";
 import UseBreadcrumb from "@/components/ui/breadcrumb/UseBreadcrumb";
 import Title from "@/components/ui/Title";
-import DoctorCard from "@/components/pages/DoctorCard";
+import DoctorCard from "@/components/card/DoctorCard";
 import { doctors } from "@/data/doctors";
 
 const breadcrumbs = [

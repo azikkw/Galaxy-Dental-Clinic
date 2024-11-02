@@ -204,7 +204,7 @@ const CarouselPrevious = React.forwardRef<
       variant={variant}
       size={size}
       className={cn(
-        "rounded-full bg-gray-400",
+        "rounded-full bg-secondTextColor",
         className
       )}
       disabled={!canScrollPrev}
