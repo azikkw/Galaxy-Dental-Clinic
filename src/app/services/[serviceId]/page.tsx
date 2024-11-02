@@ -3,6 +3,7 @@
 import React from "react";
 import { useParams } from "next/navigation";
 import Image from "next/image";
+import MainBlock from "@/components/ui/MainBlock";
 import UseBreadcrumb from "@/components/ui/breadcrumb/UseBreadcrumb";
 import DoctorCard from "@/components/pages/DoctorCard";
 import Title from "@/components/ui/Title";
@@ -24,10 +25,10 @@ export default function Service() {
 
     const availableDoctors: DoctorInterface[] = doctors.filter((doctor) => doctor.services?.includes(service.id));
 
-    return <main className="min-h-dvh px-[15px] pt-[110px] mb-[150px]">
+    return <MainBlock>
         <UseBreadcrumb breadcrumbs={breadcrumbs}/>
         <section className="bg-fourthBlueColor h-[540px] rounded-b-[20px] absolute left-0 top-0 -z-[1] pt-[150px] px-[15px]">
-            <Title title={service.name} className="text-[33px] mb-1"/>
+            <Title title={service.name} className="mb-1"/>
             <span className="text-lg">{service.description}</span>
             <Image src={service.img} alt={service.name} width={500} height={500} className="absolute right-0 bottom-0 object-cover rounded-b-[20px]" />
         </section>
@@ -41,5 +42,5 @@ export default function Service() {
                 }
             </div>
         </section>
-    </main>
+    </MainBlock>
 }

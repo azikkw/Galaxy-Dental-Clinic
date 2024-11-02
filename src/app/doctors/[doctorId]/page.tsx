@@ -3,9 +3,10 @@
 import React from "react";
 import { useParams } from "next/navigation";
 import Image from "next/image";
-import Rating from "@/components/ui/Rating";
-import Title from "@/components/ui/Title";
+import MainBlock from "@/components/ui/MainBlock";
 import UseBreadcrumb from "@/components/ui/breadcrumb/UseBreadcrumb";
+import Title from "@/components/ui/Title";
+import Rating from "@/components/ui/Rating";
 import { DoctorInterface, getDoctor } from "@/data/doctors";
 
 const breadcrumbs = [
@@ -21,7 +22,7 @@ export default function Doctor() {
 
     breadcrumbs[2].label = doctor.name;
 
-    return <main className="min-h-dvh px-[15px] pt-[110px]">
+    return <MainBlock>
         <UseBreadcrumb breadcrumbs={breadcrumbs}/>
         <section className="mt-7 sm:mt-8 sm:flex sm:items-center sm:gap-8">
             <div className="w-[160px] h-[160px] overflow-hidden rounded-full border border-[#D8DCE4]">
@@ -34,8 +35,8 @@ export default function Doctor() {
             </div>
         </section>
         <section>
-            <Title title="До / После" className="text-[33px] mt-16 mb-7"/>
+            <Title title="До / После" className="mt-16 mb-7"/>
 
         </section>
-    </main>
+    </MainBlock>
 }

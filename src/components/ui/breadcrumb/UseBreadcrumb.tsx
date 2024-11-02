@@ -5,11 +5,12 @@ interface Breadcrumbs {
     breadcrumbs: {
         label: string;
         url?: string;
-    }[];
+    }[],
+    className?: string
 }
 
-const UseBreadcrumb: React.FC<Breadcrumbs> = ({ breadcrumbs }) => {
-    return <Breadcrumb>
+const UseBreadcrumb: React.FC<Breadcrumbs> = ({ breadcrumbs, className }) => {
+    return <Breadcrumb className={className}>
         <BreadcrumbList>
             {
                 breadcrumbs.map((breadcrumb, index) => (

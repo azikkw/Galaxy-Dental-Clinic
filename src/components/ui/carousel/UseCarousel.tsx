@@ -12,7 +12,7 @@ const UseCarousel: React.FC<UseCarouselProps> = ({ data }) => {
         <CarouselContent>
             {
                 data.map((doctor) => (
-                    <CarouselItem key={doctor.id} className="md:basis-1/2 lg:basis-1/3">
+                    <CarouselItem key={doctor.id} className="md:basis-1/2 lg:basis-[27%]">
                         <DoctorCard doctor={doctor}/>
                     </CarouselItem>
                 ))

@@ -1,7 +1,6 @@
-import Title from "@/components/ui/Title";
+import MainBlock from "@/components/ui/MainBlock";
 import UseBreadcrumb from "@/components/ui/breadcrumb/UseBreadcrumb";
-import ServiceCard from "@/components/pages/ServiceCard";
-import { services } from "@/data/services";
+import ServicesSection from "@/components/home/ServicesSection";
 
 const breadcrumbs = [
     { label: "Главная", url: "/" },
@@ -9,15 +8,8 @@ const breadcrumbs = [
 ]
 
 export default function Services() {
-    return <main className="min-h-dvh px-[15px] pt-[110px] mb-[150px]">
-        <UseBreadcrumb breadcrumbs={breadcrumbs}/>
-        <Title title="Наши услуги" className="text-[33px] mt-1 mb-7 -ml-0.5"/>
-        <section>
-            {
-                services.map((service) => (
-                    <ServiceCard key={service.id} service={service}/>
-                ))
-            }
-        </section>
-    </main>
+    return <MainBlock>
+        <UseBreadcrumb breadcrumbs={breadcrumbs} className="mb-1"/>
+        <ServicesSection/>
+    </MainBlock>
 }
