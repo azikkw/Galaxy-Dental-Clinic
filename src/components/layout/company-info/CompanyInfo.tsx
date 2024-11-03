@@ -11,7 +11,7 @@ export default function CompanyInfo({ onClose }: { onClose?: () => void }) {
             <ul className={styles.info}>
                 <li><Link href="/#about" onClick={onClose}>О Нас</Link></li>
                 <li><Link href={"/doctors"} onClick={onClose}>Наши врачи</Link></li>
-                <li><Link href="/#feedback" onClick={onClose}>Отзывы</Link></li>
+                <li><Link href="/#reviews" onClick={onClose}>Отзывы</Link></li>
                 <li><Link href={"/services"} onClick={onClose}>Услуги</Link></li>
                 <li><Link href="/#promotions" onClick={onClose}>Акции и скидки</Link></li>
                 <li><Link href="/#contacts" onClick={onClose}>Контакты</Link></li>

@@ -9,7 +9,7 @@ const PromotionsSection = () => {
     return <Section id="promotions">
         <Title title="Акции и скидки" className="mb-7"/>
         <div className="bg-secondBlueColor pt-8 rounded-[15px] overflow-hidden">
-            <div className="px-[15px] mb-10">
+            <div className="px-5 mb-10">
                 <p className="font-bold text-[33px] leading-[45px] text-mainTextColor mb-4">
                     Рассрочка 0•0•24 от <span className="text-redColor">Kaspi.kz</span>
                 </p>

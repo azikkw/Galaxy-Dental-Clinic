@@ -4,6 +4,7 @@ import MainBlock from "@/components/ui/MainBlock";
 import AboutSection from "@/components/home/AboutSection";
 import DoctorsSection from "@/components/home/DoctorsSection";
 import InstagramSection from "@/components/home/InstagramSection";
+import ReviewsSection from "@/components/home/ReviewsSection";
 import TwoGisSection from "@/components/home/TwoGisSection";
 import ServicesSection from "@/components/home/ServicesSection";
 import ScannerSection from "@/components/home/ScannerSection";
@@ -15,6 +16,7 @@ export default function Home() {
         <AboutSection/>
         <DoctorsSection/>
         <InstagramSection/>
+        <ReviewsSection/>
         <TwoGisSection/>
         <ServicesSection/>
         <ScannerSection/>
