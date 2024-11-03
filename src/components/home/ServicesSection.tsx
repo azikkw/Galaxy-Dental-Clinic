@@ -1,10 +1,9 @@
-import Section from "@/components/ui/Section";
 import ServiceCard from "@/components/card/ServiceCard";
 import Title from "@/components/ui/Title";
 import { services } from "@/data/services";
 
 const ServicesSection = () => {
-    return <Section>
+    return <section>
         <Title title="Наши услуги" className="mb-7"/>
         <div className="flex flex-col gap-y-6">
             {
@@ -13,6 +12,6 @@ const ServicesSection = () => {
                 ))
             }
         </div>
-    </Section>
+    </section>
 }
 export default ServicesSection;

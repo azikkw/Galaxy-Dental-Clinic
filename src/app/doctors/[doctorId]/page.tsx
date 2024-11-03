@@ -7,7 +7,8 @@ import MainBlock from "@/components/ui/MainBlock";
 import UseBreadcrumb from "@/components/ui/breadcrumb/UseBreadcrumb";
 import Title from "@/components/ui/Title";
 import Rating from "@/components/ui/Rating";
-import { DoctorInterface, getDoctor } from "@/data/doctors";
+import { DoctorInterface, DoctorWorksInterface, getDoctor, getDoctorWorks } from "@/data/doctors";
+import { ReactCompareSlider, ReactCompareSliderImage } from "react-compare-slider";
 
 const breadcrumbs = [
     { label: "Главная", url: "/" },
@@ -19,6 +20,7 @@ export default function Doctor() {
 
     const params = useParams<{doctorId: string}>();
     const doctor: DoctorInterface = getDoctor(params.doctorId);
+    const doctorWorks: DoctorWorksInterface = getDoctorWorks(params.doctorId);
 
     breadcrumbs[2].label = doctor.name;
 
@@ -26,7 +28,7 @@ export default function Doctor() {
         <UseBreadcrumb breadcrumbs={breadcrumbs}/>
         <section className="mt-7 sm:mt-8 sm:flex sm:items-center sm:gap-8">
             <div className="w-[160px] h-[160px] overflow-hidden rounded-full border border-[#D8DCE4]">
-                <Image src={doctor.img} alt={doctor.name} width={200} height={200} className="scale-150 mt-8"/>
+                <Image src={doctor.img} alt={doctor.name} fill className="!static w-full scale-150 mt-8"/>
             </div>
             <div className="mt-3.5 sm:mt-0">
                 <h1 className="text-[30px] text-mainTextColor font-bold">{doctor.name}</h1>
@@ -35,8 +37,22 @@ export default function Doctor() {
             </div>
         </section>
         <section>
-            <Title title="До / После" className="mt-16 mb-7"/>
-
+            <Title title="До / После" className="mt-20 mb-7"/>
+            <div className="grid md:grid-cols-2 justify-between gap-y-7">
+                {
+                    doctorWorks.works.map((work, index) => (
+                        <div key={index} className="w-full md:w-[600px]">
+                            <ReactCompareSlider
+                                className="w-full h-[200px] md:h-auto rounded-[15px] mb-2"
+                                itemOne={<ReactCompareSliderImage src={work.before} alt="Before Image"/>}
+                                itemTwo={<ReactCompareSliderImage src={work.after} alt="After Image"/>}
+                                onlyHandleDraggable
+                            />
+                            <span>{work.description}</span>
+                        </div>
+                    ))
+                }
+            </div>
         </section>
     </MainBlock>
 }

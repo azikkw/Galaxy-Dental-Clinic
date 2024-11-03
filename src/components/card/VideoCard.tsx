@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import { ReactDOM } from "next/dist/server/route-modules/app-page/vendored/ssr/entrypoints";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
@@ -19,7 +19,7 @@ const VideoCard: React.FC<VideoCardProps> = ({previewImg, video, imgClassName}) 
     const VideoModal = (
         <div className="w-full h-dvh flex flex-col items-end bg-[#000000DA] px-[15px] py-5 fixed left-0 top-0 z-10">
             <CloseIcon className="w-9 h-9 text-white mb-7" onClick={() => setShowVideo(false)}/>
-            <video src={video} poster={previewImg} className="w-full h-[90%] object-cover rounded-[15px]" controls autoPlay={window.innerWidth > 768}/>
+            <video src={video} poster={previewImg} className="w-full h-[90%] object-cover rounded-[15px]" controls/>
         </div>
     );
 

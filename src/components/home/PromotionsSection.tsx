@@ -1,12 +1,11 @@
 import Link from "next/link";
 import Image from "next/image";
-import Section from "@/components/ui/Section";
 import Title from "@/components/ui/Title";
 import { Button } from "@/components/ui/Button";
 import { AppointmentIcon } from "@/app/assets/defaultIcons";
 
 const PromotionsSection = () => {
-    return <Section id="promotions">
+    return <section id="promotions">
         <Title title="Акции и скидки" className="mb-7"/>
         <div className="bg-secondBlueColor pt-8 rounded-[15px] overflow-hidden">
             <div className="px-5 mb-10">
@@ -21,6 +20,6 @@ const PromotionsSection = () => {
             </div>
             <Image src="/images/home/promotion.png" alt="Команда Galaxy Dental Clinic" fill className="!static !w-auto !h-[240px] md:!h-[300px] object-cover"/>
         </div>
-    </Section>
+    </section>
 }
 export default PromotionsSection;
