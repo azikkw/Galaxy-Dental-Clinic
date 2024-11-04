@@ -7,7 +7,7 @@ html {
 }
 
 body {
-  @apply font-sans font-[500] text-secondTextColor;
+  @apply font-sans font-[500] text-secondTextColor xl:flex xl:flex-col xl:items-center;
 }
 
 ul {

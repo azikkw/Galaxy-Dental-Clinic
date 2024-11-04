@@ -15,7 +15,7 @@ import ContactsSection from "@/components/home/ContactsSection";
 export default function Home() {
     return <MainBlock className="gap-y-[100px] !px-0">
         <WelcomeSection/>
-        <div className="flex flex-col gap-y-[100px] px-[15px]">
+        <div className="flex flex-col gap-y-[100px] px-[15px] sm:px-6 md:px-10 lg:px-[90px] xl:px-0">
             <AboutSection/>
             <DoctorsSection/>
             <InstagramSection/>

@@ -9,19 +9,25 @@ export default function CompanyInfo({ onClose }: { onClose?: () => void }) {
         <div className={styles.infoBlock}>
             <span>Информация</span>
             <ul className={styles.info}>
-                <li><Link href="/#about" onClick={onClose}>О Нас</Link></li>
-                <li><Link href={"/doctors"} onClick={onClose}>Наши врачи</Link></li>
-                <li><Link href="/#reviews" onClick={onClose}>Отзывы</Link></li>
-                <li><Link href={"/services"} onClick={onClose}>Услуги</Link></li>
-                <li><Link href="/#promotions" onClick={onClose}>Акции и скидки</Link></li>
-                <li><Link href="/#contacts" onClick={onClose}>Контакты</Link></li>
+                {[
+                    { href: "/#about", label: "О Нас" },
+                    { href: "/doctors", label: "Наши врачи" },
+                    { href: "/#reviews", label: "Отзывы" },
+                    { href: "/services", label: "Услуги" },
+                    { href: "/#promotions", label: "Акции и скидки" },
+                    { href: "/#contacts", label: "Контакты" }
+                ].map((link) => (
+                    <li key={link.href} className="lg:hover:underline">
+                        <Link href={link.href} onClick={onClose}>{link.label}</Link>
+                    </li>
+                ))}
             </ul>
         </div>
         <div className={styles.infoBlock}>
             <span>Контакты</span>
             <ul className={styles.info}>
                 <li><Link href="https://go.2gis.com/z4vmv" target="_blank"><LocationIcon/> г. Астана, ул. Керей-Жанибек хандар 22</Link></li>
-                <li><Link href="/"><TimeIcon className="!w-[22px] !h-[22px]"/> Пн-сб с 10:00 до 20:00</Link></li>
+                <li><Link href="/"><TimeIcon className="!size-[22px] lg:!size-[19px]"/> Пн-сб с 10:00 до 20:00</Link></li>
                 <li><Link href="tel:+77757470816" target="_blank"><PhoneIcon/> +7 775 747-08-16</Link></li>
                 <li><Link href="https://zapis-galaxy.pulse.is/?fbclid=PAZXh0bgNhZW0CMTEAAaYb6sxbuwYaCWSSNzivY0dG2X25qHMuGwOk_dqJTUWQrjDstcQXSQIw3v0_aem_iqEQQeZLB43S5a1VWl2vMQ" target="_blank"><AppointmentIcon/> zapis-galaxy.pulse.is</Link></li>
             </ul>

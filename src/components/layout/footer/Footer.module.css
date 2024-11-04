@@ -1,6 +1,6 @@
 .footer {
-    @apply px-[15px] pt-10 pb-[110px] text-[17px] relative border-t border-mainBorderColor;
+    @apply px-[15px] pt-10 pb-[110px] text-[17px] relative border-t border-mainBorderColor sm:px-6 md:px-10 lg:px-[90px] lg:w-full lg:flex lg:justify-center lg:text-base lg:pb-12;
 }
 .company {
-    @apply w-full h-[70px] flex items-center justify-center absolute left-0 bottom-0 mt-4 border-t border-mainBorderColor text-mainTextColor font-bold;
+    @apply w-full h-[70px] flex items-center justify-center absolute left-0 bottom-0 mt-4 border-t border-mainBorderColor text-mainTextColor font-bold lg:static lg:border-none lg:block;
 }

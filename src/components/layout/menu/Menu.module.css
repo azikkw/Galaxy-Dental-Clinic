@@ -1,5 +1,5 @@
 .menu {
-    @apply w-full h-dvh pt-[70px] px-[15px] fixed left-0 top-0 z-[2] bg-white text-[17px];
+    @apply w-full h-dvh pt-[70px] px-[15px] fixed left-0 top-0 z-[2] bg-white text-[17px] sm:px-6 md:px-10 lg:hidden;
 }
 .menu:before {
     content: "";
