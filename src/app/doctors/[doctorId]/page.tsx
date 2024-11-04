@@ -31,24 +31,24 @@ export default function Doctor() {
                 <Image src={doctor.img} alt={doctor.name} fill className="!static w-full scale-150 mt-8"/>
             </div>
             <div className="mt-3.5 sm:mt-0">
-                <h1 className="text-[30px] text-mainTextColor font-bold">{doctor.name}</h1>
+                <h1 className="text-[30px] text-mainTextColor font-bold sm:text-[33px]">{doctor.name}</h1>
                 <span className="text-lg">{doctor.type} / Стаж {doctor.experience} лет</span>
                 <Rating amount={5} ratingClassName="gap-1.5 mt-2.5" starClassName="w-5 h-5"/>
             </div>
         </section>
         <section>
             <Title title="До / После" className="mt-20 mb-7"/>
-            <div className="grid md:grid-cols-2 justify-between gap-y-7">
+            <div className="grid md:grid-cols-2 justify-between gap-y-7 md:gap-x-3 md:gap-y-6 lg:gap-x-5 lg:gap-y-6 xl:gap-7">
                 {
                     doctorWorks.works.map((work, index) => (
-                        <div key={index} className="w-full md:w-[600px]">
+                        <div key={index} className="w-full">
                             <ReactCompareSlider
-                                className="w-full h-[200px] md:h-auto rounded-[15px] mb-2"
+                                className="w-full md:h-auto rounded-[15px] mb-2 sm:mb-3"
                                 itemOne={<ReactCompareSliderImage src={work.before} alt="Before Image"/>}
                                 itemTwo={<ReactCompareSliderImage src={work.after} alt="After Image"/>}
                                 onlyHandleDraggable
                             />
-                            <span>{work.description}</span>
+                            <span className="sm:text-[17px] lg:text-base">{work.description}</span>
                         </div>
                     ))
                 }

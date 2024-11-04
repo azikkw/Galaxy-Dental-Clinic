@@ -43,7 +43,7 @@ export default function Service() {
 
     return <MainBlock className="relative">
         <UseBreadcrumb breadcrumbs={breadcrumbs}/>
-        <section className="w-full bg-[#EEF7FF] h-[540px] rounded-b-[20px] absolute left-0 top-0 -z-[1] pt-[150px] px-[15px] sm:h-[650px] sm:px-6 md:static md:flex md:items-center md:justify-between md:h-[200px] md:overflow-hidden md:rounded-[15px] md:p-0 md:pl-8 md:mt-6 lg:pl-12">
+        <section className="w-full bg-[#EEF7FF] h-[540px] rounded-b-[20px] absolute left-0 top-0 -z-[1] pt-[150px] px-[15px] sm-custom:h-[650px] sm:px-6 md:static md:flex md:items-center md:justify-between md:h-[200px] md:overflow-hidden md:rounded-[15px] md:p-0 md:pl-8 md:mt-6 lg:pl-12">
             <div>
                 <Title title={service.name} className="mb-1 sm:mt-3 md:mt-0 lg:-mt-3.5"/>
                <span className="text-lg md:text-[17px] lg:text-lg">{service.description}</span>
@@ -52,7 +52,7 @@ export default function Service() {
                 <Image src={service.img} alt={service.name} fill className="!static !w-full object-cover rounded-b-[20px] lg:rounded-none" />
             </div>
         </section>
-        <section className="mt-[590px] md:mt-20">
+        <section className="mt-[500px] sm-custom:mt-[600px] md:mt-20">
             <Title title="Цены" className="mb-7"/>
             <div className={service.categories.length > 1 ? "inline-flex flex-wrap gap-2 mb-9" : ""}>
                 {

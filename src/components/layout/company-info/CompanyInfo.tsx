@@ -1,35 +1,33 @@
 import React from "react";
 import styles from "./CompanyInfo.module.css";
 import Link from "next/link";
-import { LocationIcon, PhoneIcon, TimeIcon, AppointmentIcon } from "@/app/assets/defaultIcons";
 import { InstagramLinkIcon, TelegramLinkIcon, WhatsappLinkIcon } from "@/app/assets/socialMedia";
+import { companyInfo, navigation } from "@/data/companyInfo";
 
 export default function CompanyInfo({ onClose }: { onClose?: () => void }) {
     return <React.Fragment>
         <div className={styles.infoBlock}>
             <span>Информация</span>
             <ul className={styles.info}>
-                {[
-                    { href: "/#about", label: "О Нас" },
-                    { href: "/doctors", label: "Наши врачи" },
-                    { href: "/#reviews", label: "Отзывы" },
-                    { href: "/services", label: "Услуги" },
-                    { href: "/#promotions", label: "Акции и скидки" },
-                    { href: "/#contacts", label: "Контакты" }
-                ].map((link) => (
-                    <li key={link.href} className="lg:hover:underline">
-                        <Link href={link.href} onClick={onClose}>{link.label}</Link>
-                    </li>
-                ))}
+                {
+                    navigation.map((link, index) => (
+                        <li key={index} className="lg:hover:underline">
+                            <Link href={link.href} onClick={onClose}>{link.label}</Link>
+                        </li>
+                    ))
+                }
             </ul>
         </div>
         <div className={styles.infoBlock}>
             <span>Контакты</span>
             <ul className={styles.info}>
-                <li><Link href="https://go.2gis.com/z4vmv" target="_blank"><LocationIcon/> г. Астана, ул. Керей-Жанибек хандар 22</Link></li>
-                <li><Link href="/"><TimeIcon className="!size-[22px] lg:!size-[19px]"/> Пн-сб с 10:00 до 20:00</Link></li>
-                <li><Link href="tel:+77757470816" target="_blank"><PhoneIcon/> +7 775 747-08-16</Link></li>
-                <li><Link href="https://zapis-galaxy.pulse.is/?fbclid=PAZXh0bgNhZW0CMTEAAaYb6sxbuwYaCWSSNzivY0dG2X25qHMuGwOk_dqJTUWQrjDstcQXSQIw3v0_aem_iqEQQeZLB43S5a1VWl2vMQ" target="_blank"><AppointmentIcon/> zapis-galaxy.pulse.is</Link></li>
+                {
+                    companyInfo.map((link, index) => (
+                        <li key={index}>
+                            <Link href={link.href}><link.icon/>{link.label}</Link>
+                        </li>
+                    ))
+                }
             </ul>
             <div className={styles.socialMedia}>
                 <Link href="https://www.instagram.com/galaxy_dental_clinic/" target="_blank"><InstagramLinkIcon/></Link>

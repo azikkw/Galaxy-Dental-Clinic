@@ -13,9 +13,9 @@ import PromotionsSection from "@/components/home/PromotionsSection";
 import ContactsSection from "@/components/home/ContactsSection";
 
 export default function Home() {
-    return <MainBlock className="gap-y-[100px] !px-0">
+    return <MainBlock className="gap-y-[100px] !px-0 lg:pt-5 xl:!w-full">
         <WelcomeSection/>
-        <div className="flex flex-col gap-y-[100px] px-[15px] sm:px-6 md:px-10 lg:px-[90px] xl:px-0">
+        <div className="flex flex-col gap-y-[100px] px-[15px] sm:px-6 md:px-10 lg:gap-y-[120px] lg:px-[90px] xl:mx-auto xl:px-0 xl:w-[1050px]">
             <AboutSection/>
             <DoctorsSection/>
             <InstagramSection/>

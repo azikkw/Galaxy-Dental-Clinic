@@ -1,12 +1,12 @@
 import Title from "@/components/ui/Title";
-import UseCarousel from "@/components/ui/carousel/UseCarousel";
+import Carousel from "@/components/ui/Carousel";
 import ReviewCard from "@/components/card/ReviewCard";
 import { reviews } from "@/data/reviews";
 
 const ReviewsSection = () => {
-    return <section id="reviews">
+    return <section id="reviews" className="relative">
         <Title title="Наши довольные клиенты" className="mb-7"/>
-        <UseCarousel
+        <Carousel
             data={reviews}
             renderItem={(review) => <ReviewCard review={review}/>}
         />

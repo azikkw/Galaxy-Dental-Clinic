@@ -1,21 +1,31 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
-import Menu from "@/components/layout/menu/Menu";
+import Menu from "@/components/layout/Menu";
 import { CloseIcon, InstagramIcon, LocationIcon, MenuIcon, PhoneIcon } from "@/app/assets/defaultIcons";
+import { navigation } from "@/data/companyInfo";
+import { clsx } from "clsx";
+
+const linkList = [
+    { href: "https://go.2gis.com/z4vmv", label: "г. Астана, ул. Керей-Жанибек хандар 22", icon: LocationIcon },
+    { href: "tel:+77757470816", label: "+7 775 747-08-16", icon: PhoneIcon }
+]
 
 export default function Header() {
 
-    const [menuOpen, setMenuOpen] = useState(false);
-    const closeMenu = () => setMenuOpen(false);
+    const pathname = usePathname();
 
+    const [menuOpen, setMenuOpen] = useState(false);
     const [isFixed, setIsFixed] = useState(false);
+
+    const closeMenu = () => setMenuOpen(false);
 
     useEffect(() => {
         const handleScroll = () => {
-            if(window.scrollY > 130) setIsFixed(true);
+            if(window.scrollY > 150) setIsFixed(true);
             else setIsFixed(false);
         }
         window.addEventListener('scroll', handleScroll);
@@ -31,8 +41,15 @@ export default function Header() {
                 menuOpen ? <CloseIcon className="w-8 h-8 m-1 text-mainTextColor lg:hidden" onClick={() => setMenuOpen(false)}/>
                     : <div className="flex items-center gap-2">
                         <ul className="hidden lg:flex items-center gap-5 mr-5">
-                            <li><Link className="flex items-center gap-2" href="https://go.2gis.com/z4vmv" target="_blank"><LocationIcon className="size-5 text-mainBlueColor"/> г. Астана, ул. Керей-Жанибек хандар 22</Link></li>
-                            <li><Link className="flex items-center gap-2" href="tel:+77757470816" target="_blank"><PhoneIcon className="size-5 text-mainBlueColor"/> +7 775 747-08-16</Link></li>
+                            {
+                                linkList.map((link, index) => (
+                                    <li key={index}>
+                                        <Link className="flex items-center gap-2 lg:hover:underline" href={link.href} target="_blank">
+                                            <link.icon className="size-5 text-mainBlueColor"></link.icon> {link.label}
+                                        </Link>
+                                    </li>
+                                ))
+                            }
                         </ul>
                         <Link href="https://www.instagram.com/galaxy_dental_clinic/" target="_blank">
                             <InstagramIcon className="size-[34px] lg:size-[26px] text-secondTextColor lg:text-mainBlueColor"/>
@@ -41,20 +58,23 @@ export default function Header() {
                     </div>
             }
         </div>
-        <nav className={`hidden lg:flex lg:justify-center lg:w-full lg:px-[90px] xl:p-0 ${isFixed && 'lg:fixed lg:top-0 lg:z-10 lg:bg-white lg:!py-1.5 lg:border-b lg:border-mainBorderColor'}`}>
-            <ul className={`lg:w-full lg:flex lg:justify-between lg:items-center lg:bg-thirdBlueColor lg:rounded-[15px] lg:px-14 lg:py-3 lg:text-white lg:font-normal xl:w-[1050px] xl:text-[17px] ${isFixed && 'lg:bg-white lg:text-mainTextColor lg:!font-medium'}`}>
-                {[
-                    { href: "/#about", label: "О Нас" },
-                    { href: "/doctors", label: "Наши врачи" },
-                    { href: "/#reviews", label: "Отзывы" },
-                    { href: "/services", label: "Услуги" },
-                    { href: "/#promotions", label: "Акции и скидки" },
-                    { href: "/#contacts", label: "Контакты" }
-                ].map((link) => (
-                    <li key={link.href} className="lg:hover:underline">
-                        <Link href={link.href}>{link.label}</Link>
-                    </li>
-                ))}
+        <nav className={clsx("hidden lg:flex lg:justify-center lg:w-full lg:px-[90px] xl:p-0", isFixed && "lg:fixed lg:top-0 lg:z-10 lg:bg-white lg:!py-1.5 lg:border-b lg:border-mainBorderColor")}>
+            <ul className={`lg:w-full lg:flex lg:justify-between lg:items-center lg:bg-thirdBlueColor lg:rounded-[15px] lg:px-14 lg:py-3 lg:text-white lg:font-normal xl:w-[1050px] xl:text-[17px] ${isFixed && 'lg:bg-white lg:!text-mainTextColor lg:!font-medium'}`}>
+                {
+                    navigation.map((link, index) => (
+                        <li key={index} className="lg:hover:underline">
+                            <Link
+                                href={link.href}
+                                className={clsx({
+                                    "underline": pathname === link.href,
+                                    "text-mainBlueColor": isFixed && pathname === link.href}
+                                )}
+                            >
+                                {link.label}
+                            </Link>
+                        </li>
+                    ))
+                }
             </ul>
         </nav>
         {menuOpen && <Menu onClose={closeMenu}/>}

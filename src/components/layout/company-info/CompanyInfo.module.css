@@ -14,12 +14,21 @@
 .info li a {
     @apply flex items-center gap-2;
 }
+.info li a:hover {
+    @apply lg:underline;
+}
 .info li a svg {
     @apply size-6 text-mainBlueColor lg:size-5;
 }
 
 .socialMedia {
-    @apply flex items-center gap-[15px] mt-5;
+    @apply flex items-center gap-[15px] mt-5 lg:transition-all lg:duration-200;
+}
+.socialMedia a {
+    @apply lg:transition-all lg:duration-200;
+}
+.socialMedia a:hover {
+    @apply lg:scale-[1.2];
 }
 .socialMedia svg {
     @apply size-14 lg:size-12;

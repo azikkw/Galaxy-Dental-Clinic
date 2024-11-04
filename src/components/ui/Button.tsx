@@ -11,14 +11,15 @@ const buttonVariants = cva(
       variant: {
         default: "bg-mainBlueColor text-white lg:hover:bg-hoverBlueColor",
         green: "bg-greenColor text-white lg:hover:bg-hoverGreenColor",
-        outline: "border border-input bg-background lg:hover:bg-accent lg:hover:text-accent-foreground",
-        link: "text-primary underline-offset-4 lg:hover:underline",
+        outline: "border border-input bg-background lg:hover:bg-accent lg:hover:text-mainTextColor",
+        carouselPrev: "rounded-full text-white bg-secondTextColor lg:hover:bg-carouselPrevButtonHover",
+        carouselNext: "rounded-full text-white bg-carouselNextButtonColor lg:hover:bg-carouselNextButtonHover",
       },
       size: {
         default: "h-[58px] rounded-[10px]",
         sm: "h-11 rounded-[10px]",
         lg: "h-12 rounded-[10px]",
-        icon: "h-11 w-11",
+        icon: "size-11 md:size-[52px] lg:size-11",
       },
     },
     defaultVariants: {

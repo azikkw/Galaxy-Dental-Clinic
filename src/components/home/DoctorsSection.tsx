@@ -1,12 +1,12 @@
 import Title from "@/components/ui/Title";
-import UseCarousel from "@/components/ui/carousel/UseCarousel";
+import Carousel from "@/components/ui/Carousel";
 import { doctors } from "@/data/doctors";
 import DoctorCard from "@/components/card/DoctorCard";
 
 const DoctorsSection = () => {
-    return <section>
+    return <section className="relative">
         <Title title="Наши врачи" className="mb-7"/>
-        <UseCarousel
+        <Carousel
             data={doctors}
             renderItem={(doctor) => <DoctorCard doctor={doctor}/>}
         />

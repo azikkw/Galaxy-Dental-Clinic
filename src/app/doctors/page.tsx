@@ -13,7 +13,7 @@ export default function Doctors() {
     return <MainBlock>
         <UseBreadcrumb breadcrumbs={breadcrumbs}/>
         <Title title="Наши врачи" className="mt-1 mb-7"/>
-        <section className="grid sm:grid-cols-3 sm:justify-between gap-y-6">
+        <section className="grid sm:grid-cols-2 sm:justify-between gap-6 lg:grid-cols-3 sm:gap-4 xl:gap-5">
             {
                 doctors.map((doctor) => (
                     <DoctorCard key={doctor.id} doctor={doctor}/>

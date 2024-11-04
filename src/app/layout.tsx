@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Manrope } from "next/font/google";
 import Header from "@/components/layout/Header";
-import Footer from "@/components/layout/footer/Footer";
+import Footer from "@/components/layout/Footer";
 
 export const metadata: Metadata = {
     title: "Galaxy Dental Clinic",

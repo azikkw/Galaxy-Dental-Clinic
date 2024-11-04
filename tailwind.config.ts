@@ -9,6 +9,9 @@ const config: Config = {
   ],
   theme: {
   	extend: {
+		screens: {
+			'sm-custom': '425px'
+		},
   		colors: {
   			mainTextColor: '#27313F',
   			secondTextColor: '#4D5662',
@@ -19,7 +22,9 @@ const config: Config = {
 			fourthBlueColor: '#F1F8FF',
 			greenColor: '#4BBC5C',
 			hoverGreenColor: '#35b349',
-			carouselButtonColor: '#004080',
+			carouselNextButtonColor: '#004080',
+			carouselNextButtonHover: '#013467',
+			carouselPrevButtonHover: '#3b424c',
   			redColor: '#F64242',
   			beigeColor: '#FCD6A3',
   			mainBorderColor: '#E1E5EB',
