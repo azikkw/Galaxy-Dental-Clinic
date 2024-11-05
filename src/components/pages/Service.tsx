@@ -79,16 +79,18 @@ const Service: React.FC<ServiceProps> = ({ service, servicePrice }) => {
                 }
             </div>
         </section>
-        <section className="mt-20">
-            <Title title="Лечащие врачи" className="mb-7"/>
-            <div className="flex flex-col sm:flex-row gap-6">
-                {
-                    availableDoctors.map((doctor) => (
-                        <DoctorCard key={doctor.id} doctor={doctor} className="w-full lg:w-[360px]"/>
-                    ))
-                }
-            </div>
-        </section>
+        {
+            availableDoctors.length > 0 && <section className="mt-20">
+                <Title title="Лечащие врачи" className="mb-7"/>
+                <div className="flex flex-col sm:flex-row gap-6">
+                    {
+                        availableDoctors.map((doctor) => (
+                            <DoctorCard key={doctor.id} doctor={doctor} className="w-full lg:w-[360px]"/>
+                        ))
+                    }
+                </div>
+            </section>
+        }
     </MainBlock>
 }
 export default Service;

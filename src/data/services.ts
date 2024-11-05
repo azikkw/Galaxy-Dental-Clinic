@@ -1,5 +1,13 @@
 import React, { SVGProps } from "react";
-import { HygieneIcon, ImplantationIcon, OrthodonticsIcon, OrthopedicsIcon, SurgeryIcon, TherapyIcon } from "@/app/assets/servicesIcons";
+import {
+    HygieneIcon,
+    ImplantationIcon,
+    OrthodonticsIcon,
+    OrthopedicsIcon,
+    SalesIcon,
+    SurgeryIcon,
+    TherapyIcon
+} from "@/app/assets/servicesIcons";
 
 export interface ServiceCardInterface {
     id: string,
@@ -35,15 +43,17 @@ export const services: ServiceCardInterface[] = [
     { id: "s3", name: "Хирургия", description: "Операция по удалению и сохранению зубов", icon: SurgeryIcon },
     { id: "s4", name: "Имплантация", description: "Восстановление зуба с помощью импланта", icon: ImplantationIcon },
     { id: "s5", name: "Ортопедия", description: "Восстановление зубов с помощью коронок", icon: OrthopedicsIcon },
-    { id: "s6", name: "Ортодонтия", description: "Исправление зубов и установка брекет-систем", icon: OrthodonticsIcon }
+    { id: "s6", name: "Ортодонтия", description: "Исправление зубов и установка брекет-систем", icon: OrthodonticsIcon },
+    { id: "s7", name: "Продажи", description: "Полезные вещи для ухода за зубами и деснами", icon: SalesIcon }
 ]
 export const servicePage: ServicesInterface[] = [
     { id: "s1", name: "Проф. гигиена", description: "Комплексная чистка и уход за зубами и деснами", img: "/images/services/s1.png", categories: ["Проф. гигиена"] },
-    { id: "s2", name: "Терапия", description: "Лечение кариеса, пульпита и разных инфекций", img: "/images/services/s2.png", categories: ["EsCom (Юж.Корея)", "EstelitePalfique (Япония)", "Дополнительно"] },
-    { id: "s3", name: "Хирургия", description: "Операция по удалению и сохранению зубов", img: "/images/services/s3.png", categories: ["Хирургия"] },
-    { id: "s4", name: "Имплантация", description: "Восстановление зуба с помощью импланта", img: "/images/services/s4.png", categories: ["Имплантация"] },
+    { id: "s2", name: "Терапия", description: "Лечение кариеса, пульпита и разных инфекций", img: "/images/services/s2.png", categories: ["EsCom (Юж.Корея)", "EstelitePalfique (Япония)", "Художественная рестоврация", "Дополнительно"] },
+    { id: "s3", name: "Хирургия", description: "Операция по удалению и сохранению зубов", img: "/images/services/s3.png", categories: ["Хирургия", "Дополнительно"] },
+    { id: "s4", name: "Имплантация", description: "Восстановление зуба с помощью импланта", img: "/images/services/s4.png", categories: ["Имплантация", "Дополнительно"] },
     { id: "s5", name: "Ортопедия", description: "Восстановление зубов с помощью коронок", img: "/images/services/s5.png", categories: ["Съемные конструкции", "Несъёмные конструкции", "Дополнительно"] },
-    { id: "s6", name: "Ортодонтия", description: "Исправление зубов и установка брекет-систем", img: "/images/services/s6.png", categories: ["Ортодонтия", "Детская ортодонтия"] }
+    { id: "s6", name: "Ортодонтия", description: "Исправление зубов и установка брекет-систем", img: "/images/services/s6.png", categories: ["Ортодонтия", "Детская ортодонтия", "Дополнительно"] },
+    { id: "s7", name: "Продажи", description: "Полезные вещи для ухода за зубами и деснами", img: "/images/services/s7.png", categories: ["Продажи"] },
 ]
 const servicesPrice: ServicePriceInterface[] = [
     {
@@ -229,8 +239,56 @@ const servicesPrice: ServicePriceInterface[] = [
                 ]
             },
             {
+                name: "Художественная рестоврация",
+                types: [
+                    {
+                        name: "Художественная рестоврация",
+                        price: [
+                            {
+                                service: "Художественная реставрация фронтальной группы зубов Estelite Asteria (Япония)",
+                                amount: 45000
+                            },
+                            {
+                                service: "Художественная реставрация фронтальной группы зубов Omnichroma (Япония)",
+                                amount: 40000
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
                 name: "Дополнительно",
                 types: [
+                    {
+                        name: "Местное обезболивание",
+                        price: [
+                            {
+                                service: "Анестезия аппликационная",
+                                amount: 1000
+                            },
+                            {
+                                service: "Анестезия инфильтрационная",
+                                amount: 3000
+                            },
+                            {
+                                service: "Анестезия проводниковая",
+                                amount: 4000
+                            }
+                        ]
+                    },
+                    {
+                        name: "Рентген диагностика",
+                        price: [
+                            {
+                                service: "Рентген снимок (1 зуб)",
+                                amount: 2000
+                            },
+                            {
+                                service: "Контрольный снимок",
+                                amount: 1000
+                            }
+                        ]
+                    },
                     {
                         name: "Плазмолифтинг",
                         price: [
@@ -445,6 +503,41 @@ const servicesPrice: ServicePriceInterface[] = [
                         ]
                     }
                 ]
+            },
+            {
+                name: "Дополнительно",
+                types: [
+                    {
+                        name: "Местное обезболивание",
+                        price: [
+                            {
+                                service: "Анестезия аппликационная",
+                                amount: 1000
+                            },
+                            {
+                                service: "Анестезия инфильтрационная",
+                                amount: 3000
+                            },
+                            {
+                                service: "Анестезия проводниковая",
+                                amount: 4000
+                            }
+                        ]
+                    },
+                    {
+                        name: "Рентген диагностика",
+                        price: [
+                            {
+                                service: "Рентген снимок (1 зуб)",
+                                amount: 2000
+                            },
+                            {
+                                service: "Контрольный снимок",
+                                amount: 1000
+                            }
+                        ]
+                    }
+                ]
             }
         ]
     },
@@ -576,6 +669,41 @@ const servicesPrice: ServicePriceInterface[] = [
                         ]
                     }
                 ]
+            },
+            {
+                name: "Дополнительно",
+                types: [
+                    {
+                        name: "Местное обезболивание",
+                        price: [
+                            {
+                                service: "Анестезия аппликационная",
+                                amount: 1000
+                            },
+                            {
+                                service: "Анестезия инфильтрационная",
+                                amount: 3000
+                            },
+                            {
+                                service: "Анестезия проводниковая",
+                                amount: 4000
+                            }
+                        ]
+                    },
+                    {
+                        name: "Рентген диагностика",
+                        price: [
+                            {
+                                service: "Рентген снимок (1 зуб)",
+                                amount: 2000
+                            },
+                            {
+                                service: "Контрольный снимок",
+                                amount: 1000
+                            }
+                        ]
+                    }
+                ]
             }
         ]
     },
@@ -689,6 +817,36 @@ const servicesPrice: ServicePriceInterface[] = [
             {
                 name: "Дополнительно",
                 types: [
+                    {
+                        name: "Местное обезболивание",
+                        price: [
+                            {
+                                service: "Анестезия аппликационная",
+                                amount: 1000
+                            },
+                            {
+                                service: "Анестезия инфильтрационная",
+                                amount: 3000
+                            },
+                            {
+                                service: "Анестезия проводниковая",
+                                amount: 4000
+                            }
+                        ]
+                    },
+                    {
+                        name: "Рентген диагностика",
+                        price: [
+                            {
+                                service: "Рентген снимок (1 зуб)",
+                                amount: 2000
+                            },
+                            {
+                                service: "Контрольный снимок",
+                                amount: 1000
+                            }
+                        ]
+                    },
                     {
                         name: "Дополнительные расходы",
                         price: [
@@ -924,6 +1082,96 @@ const servicesPrice: ServicePriceInterface[] = [
                             {
                                 service: "Аппарат Френкля",
                                 amount: 100000
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                name: "Дополнительно",
+                types: [
+                    {
+                        name: "Местное обезболивание",
+                        price: [
+                            {
+                                service: "Анестезия аппликационная",
+                                amount: 1000
+                            },
+                            {
+                                service: "Анестезия инфильтрационная",
+                                amount: 3000
+                            },
+                            {
+                                service: "Анестезия проводниковая",
+                                amount: 4000
+                            }
+                        ]
+                    },
+                    {
+                        name: "Рентген диагностика",
+                        price: [
+                            {
+                                service: "Рентген снимок (1 зуб)",
+                                amount: 2000
+                            },
+                            {
+                                service: "Контрольный снимок",
+                                amount: 1000
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        id: "s7",
+        categories: [
+            {
+                name: "Продажи",
+                types: [
+                    {
+                        name: "Продажи",
+                        price: [
+                            {
+                                service: "Ирригатор \"Portable\" (голубой)",
+                                amount: 23000
+                            },
+                            {
+                                service: "Ирригатор \"WaterFlosser\" (зеленый)",
+                                amount: 28000
+                            },
+                            {
+                                service: "Зубная щетка Tello \"4920\"",
+                                amount: 3500
+                            },
+                            {
+                                service: "Воск ортодонтический",
+                                amount: 1000
+                            },
+                            {
+                                service: "Ершики \"TePe\"",
+                                amount: 1000
+                            },
+                            {
+                                service: "Паста \"антикариес\"",
+                                amount: 4000
+                            },
+                            {
+                                service: "Паста \"Atomy\"",
+                                amount: 2500
+                            },
+                            {
+                                service: "Щетки \"Atomy\"",
+                                amount: 1500
+                            },
+                            {
+                                service: "Резинка \"Бурундук\"",
+                                amount: 1000
+                            },
+                            {
+                                service: "Резинка \"Лисичка\"",
+                                amount: 1000
                             }
                         ]
                     }

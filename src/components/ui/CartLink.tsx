@@ -19,8 +19,8 @@ const CartLink: FC<CartLinkProps> = ({ generalClassName, textClassName, isFixed 
         href={"/cart"}
         className={clsx(
             "group relative hidden py-[5px] pl-1.5 pr-2 rounded-[6px] mr-1.5 bg-mainBlueColor lg:bg-transparent lg:mr-0 lg:items-center lg:gap-1.5 lg:py-1 lg:hover:bg-mainBlueColor",
-            isFixed && "lg:flex lg:fixed lg:top-3.5 lg:right-8 lg:z-10 lg:!gap-2 xl:right-12",
-            pathname === "/cart" && "lg:bg-mainBlueColor",
+            isFixed && "lg:flex lg:fixed lg:top-3.5 lg:right-5 lg:z-10 lg:!gap-2 xl:right-12",
+            pathname === "/cart" && "lg:!bg-mainBlueColor",
             generalClassName)
         }
     >
