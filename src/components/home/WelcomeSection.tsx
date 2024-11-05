@@ -7,7 +7,7 @@ const WelcomeSection = () => {
     return <section className="h-[700px] border-b border-mainBorderColor overflow-hidden sm-custom:h-[800px] sm:h-fit lg:flex lg:justify-center">
         <div className="sm:px-6 md:px-10 lg:flex lg:items-end lg:px-[90px] xl:px-0 xl:w-[1050px]">
             <div className="mb-8 px-[15px] sm:px-0 lg:h-full sm:w-[500px] lg:w-[600px] lg:flex lg:flex-col lg:justify-center">
-                <h1 className="text-4xl leading-[50px] font-bold text-mainTextColor mb-3 lg:text-[37px] lg:font-black lg:mb-8 xl:text-[40px]">
+                <h1 className="text-4xl leading-[50px] font-bold text-mainTextColor mb-3 lg:text-[37px] lg:font-black lg:mb-8 xl:text-[40px] lg:leading-[55px]">
                     Рассрочка 0•0•24 от <span className="text-redColor">Kaspi.kz</span>
                 </h1>
                 <p className="text-[17px] hidden sm:block">Отличная возможность получить качественное стоматологическое обслуживание без забот о финансах!</p>
