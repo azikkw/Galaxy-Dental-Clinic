@@ -9,7 +9,7 @@
     @apply mt-3;
 }
 .info li {
-    @apply mt-2.5;
+    @apply w-fit mt-2.5;
 }
 .info li a {
     @apply flex items-center gap-2;

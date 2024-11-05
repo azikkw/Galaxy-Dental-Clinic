@@ -1,11 +1,16 @@
 import React, { SVGProps } from "react";
 import { HygieneIcon, ImplantationIcon, OrthodonticsIcon, OrthopedicsIcon, SurgeryIcon, TherapyIcon } from "@/app/assets/servicesIcons";
 
+export interface ServiceCardInterface {
+    id: string,
+    name: string,
+    description: string,
+    icon: React.FC<SVGProps<SVGSVGElement>>
+}
 export interface ServicesInterface {
     id: string,
     name: string,
     description: string,
-    icon: React.FC<SVGProps<SVGSVGElement>>,
     img: string,
     categories: string[]
 }
@@ -24,13 +29,21 @@ export interface ServicePriceInterface {
     categories: ServiceCategoryInterface[]
 }
 
-export const services: ServicesInterface[] = [
-    { id: "s1", name: "Проф. гигиена", description: "Комплексная чистка и уход за зубами и деснами", icon: HygieneIcon, img: "/images/services/s1.png", categories: ["Проф. гигиена"] },
-    { id: "s2", name: "Терапия", description: "Лечение кариеса, пульпита и разных инфекций", icon: TherapyIcon, img: "/images/services/s2.png", categories: ["EsCom (Юж.Корея)", "EstelitePalfique (Япония)", "Дополнительно"] },
-    { id: "s3", name: "Хирургия", description: "Операция по удалению и сохранению зубов", icon: SurgeryIcon, img: "/images/services/s3.png", categories: ["Хирургия"] },
-    { id: "s4", name: "Имплантация", description: "Восстановление зуба с помощью импланта", icon: ImplantationIcon, img: "/images/services/s4.png", categories: ["Имплантация"] },
-    { id: "s5", name: "Ортопедия", description: "Восстановление зубов с помощью коронок", icon: OrthopedicsIcon, img: "/images/services/s5.png", categories: ["Съемные конструкции", "Несъёмные конструкции", "Дополнительно"] },
-    { id: "s6", name: "Ортодонтия", description: "Исправление зубов и установка брекет-систем", icon: OrthodonticsIcon, img: "/images/services/s6.png", categories: ["Ортодонтия", "Детская ортодонтия"] }
+export const services: ServiceCardInterface[] = [
+    { id: "s1", name: "Проф. гигиена", description: "Комплексная чистка и уход за зубами и деснами", icon: HygieneIcon },
+    { id: "s2", name: "Терапия", description: "Лечение кариеса, пульпита и разных инфекций", icon: TherapyIcon },
+    { id: "s3", name: "Хирургия", description: "Операция по удалению и сохранению зубов", icon: SurgeryIcon },
+    { id: "s4", name: "Имплантация", description: "Восстановление зуба с помощью импланта", icon: ImplantationIcon },
+    { id: "s5", name: "Ортопедия", description: "Восстановление зубов с помощью коронок", icon: OrthopedicsIcon },
+    { id: "s6", name: "Ортодонтия", description: "Исправление зубов и установка брекет-систем", icon: OrthodonticsIcon }
+]
+export const servicePage: ServicesInterface[] = [
+    { id: "s1", name: "Проф. гигиена", description: "Комплексная чистка и уход за зубами и деснами", img: "/images/services/s1.png", categories: ["Проф. гигиена"] },
+    { id: "s2", name: "Терапия", description: "Лечение кариеса, пульпита и разных инфекций", img: "/images/services/s2.png", categories: ["EsCom (Юж.Корея)", "EstelitePalfique (Япония)", "Дополнительно"] },
+    { id: "s3", name: "Хирургия", description: "Операция по удалению и сохранению зубов", img: "/images/services/s3.png", categories: ["Хирургия"] },
+    { id: "s4", name: "Имплантация", description: "Восстановление зуба с помощью импланта", img: "/images/services/s4.png", categories: ["Имплантация"] },
+    { id: "s5", name: "Ортопедия", description: "Восстановление зубов с помощью коронок", img: "/images/services/s5.png", categories: ["Съемные конструкции", "Несъёмные конструкции", "Дополнительно"] },
+    { id: "s6", name: "Ортодонтия", description: "Исправление зубов и установка брекет-систем", img: "/images/services/s6.png", categories: ["Ортодонтия", "Детская ортодонтия"] }
 ]
 const servicesPrice: ServicePriceInterface[] = [
     {
@@ -920,9 +933,9 @@ const servicesPrice: ServicePriceInterface[] = [
     }
 ]
 
-export const getService = (id: string): ServicesInterface => {
-    return <ServicesInterface>services.find((service) => service.id === id);
+export async function getService(id: string): Promise<ServicesInterface> {
+    return <ServicesInterface>servicePage.find((service) => service.id === id);
 }
-export const getServicePrice = (id: string): ServicePriceInterface => {
+export async function getServicePrice(id: string): Promise<ServicePriceInterface> {
     return <ServicePriceInterface>servicesPrice.find((service) => service.id === id);
 }

@@ -28,6 +28,7 @@ const config: Config = {
   			redColor: '#F64242',
   			beigeColor: '#FCD6A3',
   			mainBorderColor: '#E1E5EB',
+			hoverBorderColor: '#c7cacf',
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
   			card: {

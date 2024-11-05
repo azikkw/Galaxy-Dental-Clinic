@@ -3,6 +3,7 @@ import styles from "./CompanyInfo.module.css";
 import Link from "next/link";
 import { InstagramLinkIcon, TelegramLinkIcon, WhatsappLinkIcon } from "@/app/assets/socialMedia";
 import { companyInfo, navigation } from "@/data/companyInfo";
+import NotEmpty from "@/components/ui/NotEmpty";
 
 export default function CompanyInfo({ onClose }: { onClose?: () => void }) {
     return <React.Fragment>
@@ -10,9 +11,15 @@ export default function CompanyInfo({ onClose }: { onClose?: () => void }) {
             <span>Информация</span>
             <ul className={styles.info}>
                 {
-                    navigation.map((link, index) => (
-                        <li key={index} className="lg:hover:underline">
-                            <Link href={link.href} onClick={onClose}>{link.label}</Link>
+                    navigation.map((link) => (
+                        <li key={link.href} className="relative lg:hover:underline">
+                            <Link href={link.href} onClick={onClose}>
+                                {link.label}
+                                {
+                                    link.label === "Акции и скидки" && link.promotionsAmount !== 0 &&
+                                    <NotEmpty amount={link.promotionsAmount} className="-right-[18px] -top-0.5"/>
+                                }
+                            </Link>
                         </li>
                     ))
                 }

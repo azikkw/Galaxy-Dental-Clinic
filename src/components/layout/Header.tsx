@@ -4,10 +4,12 @@ import React, { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
-import Menu from "@/components/layout/Menu";
-import { CloseIcon, InstagramIcon, LocationIcon, MenuIcon, PhoneIcon } from "@/app/assets/defaultIcons";
-import { navigation } from "@/data/companyInfo";
 import { clsx } from "clsx";
+import Menu from "@/components/layout/Menu";
+import CartLink from "@/components/ui/CartLink";
+import { CloseIcon, LocationIcon, MenuIcon, PhoneIcon } from "@/app/assets/defaultIcons";
+import { navigation } from "@/data/companyInfo";
+import NotEmpty from "@/components/ui/NotEmpty";
 
 const linkList = [
     { href: "https://go.2gis.com/z4vmv", label: "г. Астана, ул. Керей-Жанибек хандар 22", icon: LocationIcon },
@@ -40,7 +42,7 @@ export default function Header() {
             {
                 menuOpen ? <CloseIcon className="w-8 h-8 m-1 text-mainTextColor lg:hidden" onClick={() => setMenuOpen(false)}/>
                     : <div className="flex items-center gap-2">
-                        <ul className="hidden lg:flex items-center gap-5 mr-5">
+                        <ul className="hidden lg:flex items-center gap-5 mr-5 lg:mr-3">
                             {
                                 linkList.map((link, index) => (
                                     <li key={index}>
@@ -51,9 +53,7 @@ export default function Header() {
                                 ))
                             }
                         </ul>
-                        <Link href="https://www.instagram.com/galaxy_dental_clinic/" target="_blank">
-                            <InstagramIcon className="size-[34px] lg:size-[26px] text-secondTextColor lg:text-mainBlueColor"/>
-                        </Link>
+                        <CartLink generalClassName="!flex"/>
                         <MenuIcon className="w-10 h-10 text-mainTextColor lg:hidden" onClick={() => setMenuOpen(true)}/>
                     </div>
             }
@@ -61,21 +61,27 @@ export default function Header() {
         <nav className={clsx("hidden lg:flex lg:justify-center lg:w-full lg:px-[90px] xl:p-0", isFixed && "lg:fixed lg:top-0 lg:z-10 lg:bg-white lg:!py-1.5 lg:border-b lg:border-mainBorderColor")}>
             <ul className={`lg:w-full lg:flex lg:justify-between lg:items-center lg:bg-thirdBlueColor lg:rounded-[15px] lg:px-14 lg:py-3 lg:text-white lg:font-normal xl:w-[1050px] xl:text-[17px] ${isFixed && 'lg:bg-white lg:!text-mainTextColor lg:!font-medium'}`}>
                 {
-                    navigation.map((link, index) => (
-                        <li key={index} className="lg:hover:underline">
+                    navigation.map((link) => (
+                        <li key={link.href} className="relative lg:hover:underline">
                             <Link
                                 href={link.href}
                                 className={clsx({
-                                    "underline": pathname === link.href,
-                                    "text-mainBlueColor": isFixed && pathname === link.href}
+                                        "underline": pathname === link.href,
+                                        "text-mainBlueColor": isFixed && pathname === link.href
+                                    }
                                 )}
                             >
                                 {link.label}
+                                {
+                                    link.label === "Акции и скидки" && link.promotionsAmount !== 0 &&
+                                    <NotEmpty amount={link.promotionsAmount} className="-right-[18px] -top-0.5"/>
+                                }
                             </Link>
                         </li>
                     ))
                 }
             </ul>
+            <CartLink isFixed={isFixed} textClassName="lg:text-[17px]"/>
         </nav>
         {menuOpen && <Menu onClose={closeMenu}/>}
     </header>

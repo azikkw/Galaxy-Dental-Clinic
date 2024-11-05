@@ -4,6 +4,11 @@ import Title from "@/components/ui/Title";
 import DoctorCard from "@/components/card/DoctorCard";
 import { doctors } from "@/data/doctors";
 
+export const metadata = {
+    title: "Наши врачи | Galaxy Dental Clinic",
+    description: "Врачи, стоматологи, специалисты стоматологической клиники Galaxy Dental Clinic в городе Астана"
+};
+
 const breadcrumbs = [
     { label: "Главная", url: "/" },
     { label: "Наши врачи" }

@@ -75,9 +75,9 @@ const doctorWorks: DoctorWorksInterface[] = [
     }
 ]
 
-export const getDoctor = (id: string): DoctorInterface => {
+export async function getDoctor(id: string): Promise<DoctorInterface> {
     return <DoctorInterface>doctors.find((doctor) => doctor.id === id);
 }
-export const getDoctorWorks = (id: string): DoctorWorksInterface => {
+export async function getDoctorWorks(id: string): Promise<DoctorWorksInterface> {
     return <DoctorWorksInterface>doctorWorks.find((doctor) => doctor.id === id);
 }
