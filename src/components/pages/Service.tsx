@@ -10,6 +10,11 @@ import Title from "@/components/ui/Title";
 import { ServiceCategoryInterface, ServicePriceInterface, ServicesInterface } from "@/data/services";
 import { doctors, DoctorInterface} from "@/data/doctors";
 import { Button } from "@/components/ui/Button";
+import { AddToCartIcon } from "@/app/assets/defaultIcons";
+import { useDispatch, useSelector } from "react-redux";
+import { RootState } from "@/lib/store";
+import { addToCart, Cart } from "@/lib/features/cartSlice";
+import CartOperations from "@/components/ui/CartOperations";
 
 interface ServiceProps {
     service: ServicesInterface;
@@ -28,12 +33,19 @@ const Service: React.FC<ServiceProps> = ({ service, servicePrice }) => {
     const [activeCategory, setActiveCategory] = useState(service.categories[0]);
     const availableDoctors: DoctorInterface[] = doctors.filter((doctor) => doctor.services?.includes(service.id));
 
+    const cart: Cart[] = useSelector((state: RootState) => state.cart.services);
+    const dispatch = useDispatch();
+
     const selectCategory = (name: string) => {
         const category = servicePrice.categories.find((category) =>
             category.name === name
         ) as ServiceCategoryInterface;
         setSelectedServiceCategory(category);
         setActiveCategory(name);
+    }
+
+    const serviceInCart = (serviceName: string): boolean => {
+        return cart.some((service) => service.name === serviceName);
     }
 
     return <MainBlock className="relative">
@@ -60,21 +72,34 @@ const Service: React.FC<ServiceProps> = ({ service, servicePrice }) => {
                 {
                     selectedServiceCategory.types.map((category, index) => (
                         <div key={index} className="bg-[#C7D3E3] rounded-[15px] border border-mainBorderColor">
-                            <ul className="flex items-center px-[15px] py-[18px] text-mainTextColor text-lg font-semibold leading-[26px] md:px-7 md:py-5 lg:px-8">
-                                <li className="md:w-[75%]">{category.name}</li>
-                                <li className="hidden md:block md:w-[25%] md:pl-[5%]">Цена</li>
+                            <ul className="flex items-center px-[15px] py-[18px] text-mainTextColor text-lg lg:text-[17px] font-semibold leading-[26px] md:px-7 md:py-5 lg:px-8">
+                                <li className="md:w-[65%]">{category.name}</li>
+                                <li className="hidden md:block md:w-[20%] md:pl-[5%]">Цена</li>
+                                <li className="hidden md:block md:w-[15%]">Корзина</li>
                             </ul>
                             <ul className="bg-white rounded-b-[15px]">
                                 {
                                     category.price.map((priceItem, index) => (
-                                        <li key={index} className="flex flex-col gap-y-1.5 p-[15px] border-t border-mainBorderColor md:flex-row md:items-center md:px-7 md:py-[18px] lg:px-8">
-                                            <span className="md:w-[75%]">{priceItem.service}</span>
-                                            <span className="text-mainTextColor text-[17px] font-semibold text-end md:w-[25%] md:pl-[5%] md:text-start">{priceItem.amount} тг</span>
+                                        <li key={index}
+                                            className="flex flex-col gap-y-1 p-[15px] border-t border-mainBorderColor md:flex-row md:items-center md:px-7 md:py-[18px] lg:px-8">
+                                            <span className="md:w-[65%]">{priceItem.service}</span>
+                                            <span
+                                                className="text-mainTextColor text-[17px] font-semibold md:w-[20%] md:pl-[5%] lg:text-base lg:font-medium">{priceItem.amount} тг</span>
+                                            {
+                                                !serviceInCart(priceItem.service) ? <button
+                                                    onClick={() => dispatch(addToCart({name: priceItem.service, price: priceItem.amount, category: activeCategory, count: 1, totalPrice: priceItem.amount}))}
+                                                    className="group w-full flex justify-end items-center gap-1.5 text-mainBlueColor md:w-[15%] lg:justify-start lg:text-secondTextColor lg:hover:text-mainBlueColor"
+                                                >
+                                                    <AddToCartIcon className="size-6 lg:size-[22px]"/>
+                                                    <span className="font-semibold">Добавить</span>
+                                                </button> :
+                                                    <CartOperations service={priceItem.service}/>
+                                            }
                                         </li>
                                     ))
                                 }
                             </ul>
-                        </div>
+                    </div>
                     ))
                 }
             </div>

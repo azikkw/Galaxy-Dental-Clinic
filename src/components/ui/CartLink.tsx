@@ -1,9 +1,11 @@
 import React, { FC } from "react";
 import Link from "next/link";
+import { useSelector } from "react-redux";
+import { RootState } from "@/lib/store";
 import { usePathname } from "next/navigation";
 import { clsx } from "clsx";
 import { CartIcon } from "@/app/assets/defaultIcons";
-// import NotEmpty from "@/components/ui/NotEmpty";
+import NotEmpty from "@/components/ui/NotEmpty";
 
 interface CartLinkProps {
     generalClassName?: string;
@@ -14,6 +16,7 @@ interface CartLinkProps {
 const CartLink: FC<CartLinkProps> = ({ generalClassName, textClassName, isFixed } ) => {
 
     const pathname = usePathname();
+    const cart = useSelector((state: RootState) => state.cart.services);
 
     return <Link
         href={"/cart"}
@@ -36,7 +39,7 @@ const CartLink: FC<CartLinkProps> = ({ generalClassName, textClassName, isFixed 
         >
             Корзина
         </span>
-        {/*<NotEmpty amount={1} className="-right-2 -top-0.5"/>*/}
+        { cart.length > 0 && <NotEmpty amount={1} className="-right-2 -top-0.5"/> }
     </Link>
 }
 export default CartLink;

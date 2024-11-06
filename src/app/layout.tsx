@@ -4,6 +4,7 @@ import "./globals.css";
 import { Manrope } from "next/font/google";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import StoreProvider from "@/app/StoreProvider";
 
 export const metadata: Metadata = {
     title: "Galaxy Dental Clinic",
@@ -17,11 +18,13 @@ export default function RootLayout({
 }: Readonly<{
     children: React.ReactNode;
 }>) {
-    return <html lang="en">
+    return <html lang="ru">
         <body className={manrope.className}>
-            <Header/>
-            {children}
-            <Footer/>
+            <StoreProvider>
+                <Header/>
+                {children}
+                <Footer/>
+            </StoreProvider>
         </body>
     </html>
 }
