@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { ReactDOM } from "next/dist/server/route-modules/app-page/vendored/ssr/entrypoints";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
-import { CloseIcon, PlayerIcon } from "@/icons/defaultIcons";
+import { PlayerIcon } from "@/icons/defaultIcons";
 import PopupWindow from "@/components/ui/PopupWindow";
 
 interface VideoCardProps {
