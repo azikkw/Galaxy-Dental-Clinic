@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-export interface Cart {
+export interface CartItem {
     name: string,
     price: number,
     category: string,
@@ -8,7 +8,7 @@ export interface Cart {
     totalPrice: number
 }
 interface CartInterface {
-    services: Cart[]
+    services: CartItem[]
     cartTotalPrice: number
 }
 
@@ -22,7 +22,11 @@ export const cartSlice = createSlice({
     initialState: initialState,
     reducers: {
         addToCart: (state, action) => {
-            state.services.push(action.payload);
+            state.services.push({
+                ...action.payload,
+                count: 1,
+                totalPrice: action.payload.price
+            });
             state.cartTotalPrice += action.payload.price;
         },
         addMoreToCart: (state, action) => {
@@ -30,8 +34,8 @@ export const cartSlice = createSlice({
             if(service) {
                 service.count += 1;
                 service.totalPrice = service.count * service.price;
-                state.cartTotalPrice += service.totalPrice;
             }
+            state.cartTotalPrice = state.services.reduce((total, service) => total + service.totalPrice, 0);
         },
         removeFromCart: (state, action) => {
             const serviceIndex = state.services.findIndex((service) => service.name === action.payload);
@@ -39,19 +43,17 @@ export const cartSlice = createSlice({
                 const service = state.services[serviceIndex];
                 if(service.count > 1) {
                     service.totalPrice -= (service.totalPrice / service.count);
-                    state.cartTotalPrice -= (service.totalPrice / service.count);
                     service.count -= 1;
                 } else {
-                    state.cartTotalPrice -= service.totalPrice;
                     state.services.splice(serviceIndex, 1);
                 }
             }
+            state.cartTotalPrice = state.services.reduce((total, service) => total + service.totalPrice, 0);
         },
         removeServiceFully: (state, action) => {
             const serviceIndex = state.services.findIndex((service) => service.name === action.payload);
-            const service = state.services[serviceIndex];
-            state.cartTotalPrice -= service.totalPrice;
             state.services.splice(serviceIndex, 1);
+            state.cartTotalPrice = state.services.reduce((total, service) => total + service.totalPrice, 0);
         },
         removeAll: (state) => {
             state.services = []
