@@ -1,6 +1,6 @@
 import React from "react";
 import { cn } from "@/lib/utils";
-import { StarIcon } from "@/app/assets/defaultIcons";
+import { StarIcon } from "@/icons/defaultIcons";
 
 interface RatingProps {
     amount: number;

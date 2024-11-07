@@ -7,7 +7,7 @@ import Link from "next/link";
 import { clsx } from "clsx";
 import Menu from "@/components/layout/Menu";
 import CartLink from "@/components/ui/CartLink";
-import { CloseIcon, LocationIcon, MenuIcon, PhoneIcon } from "@/app/assets/defaultIcons";
+import { CloseIcon, LocationIcon, MenuIcon, PhoneIcon } from "@/icons/defaultIcons";
 import { navigation } from "@/data/companyInfo";
 import NotEmpty from "@/components/ui/NotEmpty";
 
@@ -73,7 +73,7 @@ export default function Header() {
                             >
                                 {link.label}
                                 {
-                                    link.label === "Акции и скидки" && link.promotionsAmount !== 0 &&
+                                    link.label === "Акции" && link.promotionsAmount !== 0 &&
                                     <NotEmpty amount={link.promotionsAmount} className="-right-[18px] -top-0.5"/>
                                 }
                             </Link>

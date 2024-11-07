@@ -10,7 +10,7 @@ const TwoGisSection = () => {
             <Title title="Больше отзывов" className="mb-4"/>
             <p className="mb-7">Еще больше отзывов от наших довольных пациентов вы сможете найти в приложении 2ГИС.</p>
             <Link href="https://go.2gis.com/z4vmv" target="_blank" className="absolute -bottom-20 sm:static">
-                <Button variant="green" size="lg" className="w-[170px] text-[17px]">Посмотреть</Button>
+                <Button variant="green" size="lg" className="w-[170px] text-[17px]" aria-label="Ссылка на 2ГИС">Посмотреть</Button>
             </Link>
         </div>
         <Link href="https://go.2gis.com/z4vmv" target="_blank" className="block md:mb-0 sm:ml-10">

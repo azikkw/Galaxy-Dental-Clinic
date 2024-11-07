@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import Title from "@/components/ui/Title";
 import { Button } from "@/components/ui/Button";
-import { AppointmentIcon } from "@/app/assets/defaultIcons";
+import { AppointmentIcon } from "@/icons/defaultIcons";
 
 const PromotionsSection = () => {
     return <section id="promotions">
@@ -15,7 +15,7 @@ const PromotionsSection = () => {
                 <p className="sm:mb-3 lg:mb-7">Отличная возможность получить качественное стоматологическое обслуживание без забот о финансах!</p>
                 <p className="mb-6 lg:hidden">Акция действует <span className="font-bold">с 1 по 13 октября</span></p>
                 <Link className="lg:flex lg:items-center lg:gap-5" href="https://zapis-galaxy.pulse.is/?fbclid=PAZXh0bgNhZW0CMTEAAaYb6sxbuwYaCWSSNzivY0dG2X25qHMuGwOk_dqJTUWQrjDstcQXSQIw3v0_aem_iqEQQeZLB43S5a1VWl2vMQ" target="_blank">
-                    <Button variant="green" size="lg" className="w-[180px] text-[17px]"><AppointmentIcon className="!w-5 !h-5"/> Записаться</Button>
+                    <Button variant="green" size="lg" className="w-[180px] text-[17px]" aria-label="Ссылка для записи"><AppointmentIcon className="!w-5 !h-5"/> Записаться</Button>
                     <p className="font-bold text-[17px] hidden lg:block">С 1 по 13 октября</p>
                 </Link>
             </div>

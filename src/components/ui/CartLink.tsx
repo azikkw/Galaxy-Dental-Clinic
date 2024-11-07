@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 import { RootState } from "@/lib/store";
 import { usePathname } from "next/navigation";
 import { clsx } from "clsx";
-import { CartIcon } from "@/app/assets/defaultIcons";
+import { CartIcon } from "@/icons/defaultIcons";
 import NotEmpty from "@/components/ui/NotEmpty";
 
 interface CartLinkProps {

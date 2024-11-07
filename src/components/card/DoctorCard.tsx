@@ -21,7 +21,7 @@ const DoctorCard: React.FC<DoctorProps> = ({ doctor, className }) => {
                 <span className="text-lg lg:text-[17px]">{doctor.type}</span>
                 <Rating amount={5} ratingClassName="gap-1.5 mt-2" starClassName="w-[18px] h-[18px]"/>
             </div>
-            <Button className="w-full text-lg lg:!h-[52px] lg:text-[17px]">Подробнее...</Button>
+            <Button className="w-full text-lg lg:!h-[52px] lg:text-[17px]" aria-label="Подробнее о враче">Подробнее...</Button>
         </div>
     </Link>
 }

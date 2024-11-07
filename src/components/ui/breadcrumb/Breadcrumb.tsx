@@ -3,7 +3,7 @@ import { Slot } from "@radix-ui/react-slot"
 // import { ChevronRight, MoreHorizontal } from "lucide-react"
 
 import { cn } from "@/lib/utils"
-import {ArrowRightIcon} from "@/app/assets/defaultIcons";
+import {ArrowRightIcon} from "@/icons/defaultIcons";
 
 const Breadcrumb = React.forwardRef<
   HTMLElement,

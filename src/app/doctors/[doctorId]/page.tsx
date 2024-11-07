@@ -11,7 +11,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const doctor = await getDoctor(doctorId);
     return {
         title: `${doctor.name} | Galaxy Dental Clinic`,
-        description: `${doctor.name}: ${doctor.type}, его стаж: ${doctor.experience} и его работы`
+        description: `Наш(а) ${doctor.type} - ${doctor.name}. Это профессионал с опытом более ${doctor.experience} лет, за время своей работы ${doctor.name} подарил(а) улыбки очень многим пацинетам и здесь вы сможете увидеть его работы.`
     }
 }
 

@@ -4,7 +4,8 @@ import ServicesSection from "@/components/home/ServicesSection";
 
 export const metadata = {
     title: "Наши услуги | Galaxy Dental Clinic",
-    description: "Услуги стомотологической клиники Galaxy Dental Clinic в городе Астана"
+    description: "Услуги стомотологической клиники Galaxy Dental Clinic в городе Астана. Наши услуги включают в себя: проф. гигиену, терапию, хирургию, имплантацию, ортопедию и ортодонтию.",
+    robots: "index, follow",
 };
 
 const breadcrumbs = [

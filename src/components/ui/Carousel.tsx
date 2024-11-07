@@ -4,7 +4,7 @@ import { Swiper as SwiperCore } from 'swiper/types';
 import { Button } from "@/components/ui/Button";
 import { DoctorInterface } from "@/data/doctors";
 import { ReviewInterface } from "@/data/reviews";
-import { CarouselBtn } from "@/app/assets/defaultIcons";
+import { CarouselBtn } from "@/icons/defaultIcons";
 // import { ArrowLeft, ArrowRight } from "lucide-react";
 import 'swiper/css';
 
@@ -52,10 +52,10 @@ const Carousel = <T extends CarouselData>({ data, renderItem }: UseCarouselProps
             }
         </Swiper>
         <div className="flex justify-center items-center gap-2 mt-9 lg:mt-1 lg:absolute lg:top-0 lg:right-0">
-            <Button variant="carouselPrev" size="icon" onClick={() => swiperRef?.slidePrev()} disabled={firstIndex}>
+            <Button variant="carouselPrev" size="icon" onClick={() => swiperRef?.slidePrev()} disabled={firstIndex} aria-label="Кнопка для предыдущего слайда">
                 <CarouselBtn className="rotate-180 !size-[23px] md:!size-7 lg:!size-6"/>
             </Button>
-            <Button variant="carouselNext" size="icon" onClick={() => swiperRef?.slideNext()} disabled={lastIndex}>
+            <Button variant="carouselNext" size="icon" onClick={() => swiperRef?.slideNext()} disabled={lastIndex} aria-label="Кнопка для следующего слайда">
                 <CarouselBtn className="!size-[23px] md:!size-7 lg:!size-6"/>
             </Button>
         </div>

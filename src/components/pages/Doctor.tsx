@@ -42,8 +42,8 @@ const Doctor: React.FC<DoctorProps> = ({ doctor, doctorWorks }) => {
                         <div key={index} className="w-full">
                             <ReactCompareSlider
                                 className="w-full md:h-auto rounded-[15px] mb-2 sm:mb-3"
-                                itemOne={<ReactCompareSliderImage src={work.before} alt="Before Image"/>}
-                                itemTwo={<ReactCompareSliderImage src={work.after} alt="After Image"/>}
+                                itemOne={<ReactCompareSliderImage src={work.before} alt={`Работа до от ${doctor.name}`}/>}
+                                itemTwo={<ReactCompareSliderImage src={work.after} alt={`Работа после от ${doctor.name}`}/>}
                                 onlyHandleDraggable
                             />
                             <span className="sm:text-[17px] lg:text-base">{work.description}</span>

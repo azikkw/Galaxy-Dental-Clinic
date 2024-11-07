@@ -10,10 +10,8 @@ export default function Footer() {
                 <Link href="/">
                     <Image src="/images/home/logo.png" alt="Galaxy Dental Clinic" width="190" height="36"/>
                 </Link>
-                <p className="mt-5 lg:max-w-[300px]">Лучшая стоматологическая клиника в г. Астана. Ваша улыбка наша
-                    радость.</p>
-                <p className="w-full h-[70px] flex items-center justify-center absolute left-0 bottom-0 mt-4 border-t border-mainBorderColor text-mainTextColor font-bold lg:static lg:border-none lg:block">
-                    © 2021-2024 Galaxy Dental Clinic
+                <p className="mt-5 lg:max-w-[320px]">Galaxy Dental Clinic - это ваша уверенность в качестве и безопасности.</p>
+                <p className="w-full h-[70px] flex items-center justify-center absolute left-0 bottom-0 mt-4 border-t border-mainBorderColor text-mainTextColor font-bold lg:static lg:border-none lg:block">© 2021-2024 Galaxy Dental Clinic
                 </p>
             </div>
             <div className="sm:flex sm:gap-[90px] lg:gap-[70px] xl:gap-[90px]"><CompanyInfo/></div>

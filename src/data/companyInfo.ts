@@ -1,5 +1,5 @@
-import React, {SVGProps} from "react";
-import {AppointmentIcon, LocationIcon, PhoneIcon, TimeIcon} from "@/app/assets/defaultIcons";
+import React, { SVGProps } from "react";
+import { AppointmentIcon, LocationIcon, PhoneIcon, TimeIcon } from "@/icons/defaultIcons";
 
 interface NavigationInterface {
     href: string,
@@ -16,8 +16,9 @@ export const navigation: NavigationInterface[] = [
     { href: "/#about", label: "О Нас" },
     { href: "/doctors", label: "Наши врачи" },
     { href: "/#reviews", label: "Отзывы" },
+    { href: "/#about-cart", label: "Что-за корзина? "},
     { href: "/services", label: "Услуги" },
-    { href: "/#promotions", label: "Акции и скидки", promotionsAmount: 1 },
+    { href: "/#promotions", label: "Акции", promotionsAmount: 1 },
     { href: "/#contacts", label: "Контакты" }
 ]
 export const companyInfo: CompanyInfoInterface[] = [

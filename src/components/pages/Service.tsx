@@ -7,15 +7,15 @@ import MainBlock from "@/components/ui/MainBlock";
 import UseBreadcrumb from "@/components/ui/breadcrumb/UseBreadcrumb";
 import DoctorCard from "@/components/card/DoctorCard";
 import Title from "@/components/ui/Title";
+import CartOperations from "@/components/ui/CartOperations";
 import { ServiceCategoryInterface, ServicePriceInterface, ServicesInterface } from "@/data/services";
 import { doctors, DoctorInterface} from "@/data/doctors";
-import { Button } from "@/components/ui/Button";
-import { AddToCartIcon } from "@/app/assets/defaultIcons";
-import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "@/lib/store";
+import { useDispatch, useSelector } from "react-redux";
 import { addToCart, CartItem } from "@/lib/features/cartSlice";
-import CartOperations from "@/components/ui/CartOperations";
-import {number} from "prop-types";
+import { Button } from "@/components/ui/Button";
+import { AddToCartIcon } from "@/icons/defaultIcons";
+import { formatNumber } from "@/utils/utils";
 
 interface ServiceProps {
     service: ServicesInterface;
@@ -49,10 +49,6 @@ const Service: React.FC<ServiceProps> = ({ service, servicePrice }) => {
         return cart.some((service) => service.name === serviceName);
     }
 
-    function formatNumber(num: number | string) {
-        return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
-    }
-
     return <MainBlock className="relative">
         <UseBreadcrumb breadcrumbs={breadcrumbs}/>
         <section className="w-full bg-[#EEF7FF] h-[540px] rounded-b-[20px] absolute left-0 top-0 -z-[1] pt-[150px] px-[15px] sm-custom:h-[650px] sm:px-6 md:static md:flex md:items-center md:justify-between md:h-[200px] md:overflow-hidden md:rounded-[15px] md:p-0 md:pl-8 md:mt-6 lg:pl-12">
@@ -69,7 +65,7 @@ const Service: React.FC<ServiceProps> = ({ service, servicePrice }) => {
             <div className={service.categories.length > 1 ? "inline-flex flex-wrap gap-2 mb-9" : ""}>
                 {
                     service.categories.length > 1 && service.categories.map((name, index) => (
-                        <Button onClick={() => selectCategory(name)} key={index} variant="outline" size="sm" className={clsx("text-[15px] px-4", activeCategory === name && "text-mainBlueColor lg:hover:text-mainBlueColor")}>{name}</Button>
+                        <Button onClick={() => selectCategory(name)} key={index} variant="outline" size="sm" className={clsx("text-[15px] px-4", activeCategory === name && "text-mainBlueColor lg:hover:text-mainBlueColor")} aria-label="Кнопка для выбора категории">{name}</Button>
                     ))
                 }
             </div>
@@ -95,6 +91,7 @@ const Service: React.FC<ServiceProps> = ({ service, servicePrice }) => {
                                                 !serviceInCart(priceItem.service) ? <button
                                                     onClick={() => dispatch(addToCart({name: priceItem.service, price: priceItem.amount, category: activeCategory}))}
                                                     className="group w-full flex justify-end items-center gap-1.5 text-mainBlueColor md:w-[14%] lg:justify-start lg:text-secondTextColor lg:hover:text-mainBlueColor"
+                                                    aria-label="Кнопка для добавления услуги в корзину"
                                                 >
                                                     <AddToCartIcon className="size-6 lg:size-[22px]"/>
                                                     <span className="font-semibold">Добавить</span>

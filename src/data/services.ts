@@ -7,7 +7,7 @@ import {
     SalesIcon,
     SurgeryIcon,
     TherapyIcon
-} from "@/app/assets/servicesIcons";
+} from "@/icons/servicesIcons";
 
 export interface ServiceCardInterface {
     id: string,
@@ -52,7 +52,7 @@ export const servicePage: ServicesInterface[] = [
     { id: "s3", name: "Хирургия", description: "Операция по удалению и сохранению зубов", img: "/images/services/s3.png", categories: ["Хирургия", "Дополнительно"] },
     { id: "s4", name: "Имплантация", description: "Восстановление зуба с помощью импланта", img: "/images/services/s4.png", categories: ["Имплантация", "Дополнительно"] },
     { id: "s5", name: "Ортопедия", description: "Восстановление зубов с помощью коронок", img: "/images/services/s5.png", categories: ["Съемные конструкции", "Несъёмные конструкции", "Дополнительно"] },
-    { id: "s6", name: "Ортодонтия", description: "Исправление зубов и установка брекет-систем", img: "/images/services/s6.png", categories: ["Ортодонтия", "Детская ортодонтия", "Дополнительно"] },
+    { id: "s6", name: "Ортодонтия", description: "Исправление зубов и установка брекет-систем", img: "/images/services/s6.png", categories: ["Ортодонтия", "Детская ортодонтия"] },
     { id: "s7", name: "Продажи", description: "Полезные вещи для ухода за зубами и деснами", img: "/images/services/s7.png", categories: ["Продажи"] },
 ]
 const servicesPrice: ServicePriceInterface[] = [
@@ -1082,41 +1082,6 @@ const servicesPrice: ServicePriceInterface[] = [
                             {
                                 service: "Аппарат Френкля",
                                 amount: 100000
-                            }
-                        ]
-                    }
-                ]
-            },
-            {
-                name: "Дополнительно",
-                types: [
-                    {
-                        name: "Местное обезболивание",
-                        price: [
-                            {
-                                service: "Анестезия аппликационная",
-                                amount: 1000
-                            },
-                            {
-                                service: "Анестезия инфильтрационная",
-                                amount: 3000
-                            },
-                            {
-                                service: "Анестезия проводниковая",
-                                amount: 4000
-                            }
-                        ]
-                    },
-                    {
-                        name: "Рентген диагностика",
-                        price: [
-                            {
-                                service: "Рентген снимок (1 зуб)",
-                                amount: 2000
-                            },
-                            {
-                                service: "Контрольный снимок",
-                                amount: 1000
                             }
                         ]
                     }

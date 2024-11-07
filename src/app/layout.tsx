@@ -8,7 +8,19 @@ import StoreProvider from "@/app/StoreProvider";
 
 export const metadata: Metadata = {
     title: "Galaxy Dental Clinic",
-    description: "Galaxy Dental Clinic, Стомотологическая клиника, Стомотология Астана, Брекеты, Имплантация, Челюстно-лицевая хирургия, Dental Clinic, Брекет система, город астана"
+    description: "Стоматологическая клиника Galaxy Dental Clinic в городе Астана. Мы на рынке более 4 лет, и за это время мы помогли более 10 000 пациентам. Наша команда состоит только из проффесионалов со стажем более 25 лет.",
+    keywords: "Galaxy Dental Clinic, стоматологическая клиника, стоматология, стоматология астана, лечение зубов, лечение кариеса, удаление зубов, удаление зуба мудрости, имплантация зубов, установка коронок, установка брекет систем, челюстно-лицевая хирургия, dental clinic",
+    robots: "index, follow",
+    openGraph: {
+        type: "website",
+        url: "https://galaxy-dental-clinic.kz",
+        title: "Galaxy Dental Clinic",
+        description: "Стоматологическая клиника Galaxy Dental Clinic в городе Астана. Команда профессионалов со стажем более 25 лет.",
+        siteName: "Galaxy Dental Clinic",
+        images: [{
+            url: "https://galaxy-dental-clinic.netlify.app/_next/image?url=%2Fimages%2Fhome%2Fteam.jpg&w=1920&q=75",
+        }]
+    }
 };
 
 const manrope = Manrope({ subsets: ["latin"] });

@@ -11,7 +11,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const service = await getService(serviceId);
     return {
         title: `${service.name} | Galaxy Dental Clinic`,
-        description: service.description
+        description: `Услуга ${service.name}. ${service.name} это все об - ${service.description}`,
+        robots: "index, follow",
     }
 }
 

@@ -3,7 +3,7 @@ import { cn } from "@/lib/utils";
 import { RootState } from "@/lib/store";
 import { CartItem, addMoreToCart, removeFromCart } from "@/lib/features/cartSlice";
 import { useDispatch, useSelector } from "react-redux";
-import { AddIcon, RemoveIcon } from "@/app/assets/defaultIcons";
+import { AddIcon, RemoveIcon } from "@/icons/defaultIcons";
 
 interface CartOperationsProps {
     service: string,

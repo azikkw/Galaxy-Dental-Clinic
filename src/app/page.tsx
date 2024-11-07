@@ -7,6 +7,7 @@ import DoctorsSection from "@/components/home/DoctorsSection";
 import InstagramSection from "@/components/home/InstagramSection";
 import ReviewsSection from "@/components/home/ReviewsSection";
 import TwoGisSection from "@/components/home/TwoGisSection";
+import AboutCartSection from "@/components/home/AboutCartSection";
 import ServicesSection from "@/components/home/ServicesSection";
 import ScannerSection from "@/components/home/ScannerSection";
 import PromotionsSection from "@/components/home/PromotionsSection";
@@ -21,6 +22,7 @@ export default function Home() {
             <InstagramSection/>
             <ReviewsSection/>
             <TwoGisSection/>
+            <AboutCartSection/>
             <ServicesSection/>
             <ScannerSection/>
             <PromotionsSection/>
