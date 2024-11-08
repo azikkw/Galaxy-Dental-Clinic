@@ -12,7 +12,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { removeAll, removeServiceFully } from "@/lib/features/cartSlice";
 import { BinIcon } from "@/icons/defaultIcons";
 import { formatNumber } from "@/utils/utils";
-import CartForm from "@/components/ui/form/CartForm";
+import CartForm from "@/components/pages/cart/CartForm";
 import PopupWindow from "@/components/ui/PopupWindow";
 import AboutCartSection from "@/components/home/AboutCartSection";
 
