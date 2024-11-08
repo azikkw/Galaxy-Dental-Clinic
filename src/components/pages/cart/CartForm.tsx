@@ -37,7 +37,7 @@ const CartForm: React.FC<CartFormProps> = ({ cart, totalItems, cartTotalPrice, c
     })
 
     async function onSubmit(data: z.infer<typeof FormSchema>) {
-        const response = await fetch('/api/contact', {
+        await fetch('/api/contact', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
