@@ -44,7 +44,7 @@ const CartForm: React.FC<CartFormProps> = ({ cart, totalItems, cartTotalPrice, c
             },
             body: JSON.stringify({ ...data, data: { cart, cartTotalPrice, totalItems } }),
         });
-        console.log(response);
+        // console.log(response);
         closeWindow();
     }
 
