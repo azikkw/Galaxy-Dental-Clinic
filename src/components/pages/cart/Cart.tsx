@@ -9,7 +9,7 @@ import CartOperations from "@/components/ui/CartOperations";
 import { Button } from "@/components/ui/Button";
 import { RootState } from "@/lib/store";
 import { useDispatch, useSelector } from "react-redux";
-import { removeAll, removeServiceFully } from "@/lib/features/cartSlice";
+import {removeAll, removeServiceFully, setFormIsNotSent} from "@/lib/features/cartSlice";
 import { BinIcon } from "@/icons/defaultIcons";
 import { formatNumber } from "@/utils/utils";
 import CartForm from "@/components/pages/cart/CartForm";
@@ -20,13 +20,22 @@ export default function Cart() {
 
     const cart = useSelector((state: RootState) => state.cart.services);
     const cartTotalPrice = useSelector((state: RootState) => state.cart.cartTotalPrice);
+    const totalItems = useSelector((state: RootState) => state.cart.totalItems);
+    const formIsSent = useSelector((state: RootState) => state.cart.formIsSent);
     const dispatch = useDispatch();
 
     const [isHovered, setIsHovered] = useState(false);
     const [showForm, setShowForm] = useState(false);
 
-    const totalCount = cart.reduce((total, item) => total + item.count, 0);
-    const closeWindow = () => setShowForm(false);
+    const closeWindow = () => {
+        if(formIsSent) {
+            setShowForm(false);
+            dispatch(removeAll());
+            dispatch(setFormIsNotSent());
+        } else {
+            setShowForm(false);
+        }
+    }
 
     if(cart.length === 0)
         return <MainBlock>
@@ -89,7 +98,7 @@ export default function Cart() {
                 <h1 className="text-2xl text-mainTextColor font-bold mb-1.5">Итого:</h1>
                 <div className="flex justify-between border-b border-mainBorderColor py-2 mb-3.5">
                     <span>Количество услуг</span>
-                    <span className="text-mainTextColor">{totalCount}</span>
+                    <span className="text-mainTextColor">{totalItems}</span>
                 </div>
                 <div className="flex items-center justify-between text-mainTextColor mb-5">
                     <span>Общая сумма</span>
@@ -102,7 +111,7 @@ export default function Cart() {
         </section>
         <AboutCartSection/>
         { showForm && <PopupWindow closeWindow={closeWindow} className="!p-0 !pt-6 items-center justify-between sm:justify-center">
-            <CartForm cart={cart} totalItems={totalCount} cartTotalPrice={cartTotalPrice} closeWindow={closeWindow}/>
+            <CartForm closeWindow={closeWindow}/>
         </PopupWindow> }
     </MainBlock>
 }

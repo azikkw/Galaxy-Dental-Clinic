@@ -38,9 +38,6 @@ export async function POST(request: Request) {
         })
     });
 
-    if(result.ok) {
-        return NextResponse.json({ message: 'Заявка успешно отправлена!' });
-    } else {
-        return NextResponse.json({ message: 'Ошибка при отправке заявки.' }, { status: result.status });
-    }
+    return NextResponse.json({ status: result.status, message: result.statusText });
+
 }

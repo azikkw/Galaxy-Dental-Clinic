@@ -20,7 +20,7 @@ export const doctors: DoctorInterface[] = [
     { id: "d2", name: "Алмаз Нурланович", type: "Хирург-имплантолог", img: "/images/doctors/d2/profile.jpg", experience: 12, services: ["s3", "s4"] },
     { id: "d3", name: "Мират Дулатович", type: "Ортодонт-терапевт", img: "/images/doctors/d3/profile.jpg", experience: 5, services: ["s1", "s2", "s6"] },
     { id: "d4", name: "Зарина Рашидовна", type: "Ортодонт-терапевт", img: "/images/doctors/d4/profile.jpg", experience: 5, services: ["s1", "s2", "s6"] },
-    { id: "d5", name: "Болат Базылбекович", type: "Оротопед", img: "/images/doctors/d5/profile.jpg", experience: 25, services: ["s5"] }
+    { id: "d5", name: "Болат Базылбекович", type: "Ортопед", img: "/images/doctors/d5/profile.jpg", experience: 25, services: ["s5"] }
 ]
 const doctorWorks: DoctorWorksInterface[] = [
     {

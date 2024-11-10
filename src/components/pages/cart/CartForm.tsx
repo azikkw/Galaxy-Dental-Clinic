@@ -1,32 +1,40 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage,} from "@/components/ui/form/Form"
 import { Input } from "@/components/ui/form/Input";
 import { Button } from "@/components/ui/Button";
-import { CartItem } from "@/lib/features/cartSlice";
+import { RootState } from "@/lib/store";
+import { useDispatch, useSelector } from "react-redux";
+import { setFormIsSent } from "@/lib/features/cartSlice";
 import { formatNumber } from "@/utils/utils";
 
 const FormSchema = z.object({
     name: z.string().min(3, {
         message: "Введите ваше имя!"
     }),
-    phone: z.string().min(11, {
-        message: "Номер должен начинаться с 8 или +7"
-    }),
+    phone: z
+        .string()
+        .regex(/^(\+7|8)/, { message: "Номер должен начинаться с 8 или +7" })
+        .min(11, { message: "Введите правильный номер телефона" })
+        .refine((value) => /^[+]?\d+$/.test(value), {
+            message: "Номер должен содержать только цифры"
+        })
 })
 
 interface CartFormProps {
-    cart: CartItem[]
-    totalItems: number
-    cartTotalPrice: number,
     closeWindow: () => void
 }
 
-const CartForm: React.FC<CartFormProps> = ({ cart, totalItems, cartTotalPrice, closeWindow }) => {
+const CartForm: React.FC<CartFormProps> = ({ closeWindow }) => {
+
+    const cart = useSelector((state: RootState) => state.cart.services);
+    const cartTotalPrice = useSelector((state: RootState) => state.cart.cartTotalPrice);
+    const totalItems = useSelector((state: RootState) => state.cart.totalItems);
+    const dispatch = useDispatch();
 
     const form = useForm<z.infer<typeof FormSchema>>({
         resolver: zodResolver(FormSchema),
@@ -35,18 +43,37 @@ const CartForm: React.FC<CartFormProps> = ({ cart, totalItems, cartTotalPrice, c
             phone: ""
         },
     })
+    const [requestSent, setRequestSent] = useState(false);
+    const [isError, setIsError] = useState(false);
 
     async function onSubmit(data: z.infer<typeof FormSchema>) {
-        await fetch('/api/contact', {
+        const result = await fetch('/api/contact', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({ ...data, data: { cart, cartTotalPrice, totalItems } }),
         });
-        // console.log(response);
-        closeWindow();
+
+        if(result.status === 200) {
+            setIsError(false)
+            setRequestSent(true)
+            dispatch(setFormIsSent())
+        } else {
+            setIsError(true)
+        }
     }
+
+    if(requestSent)
+        return <section className="h-full flex flex-col justify-center px-[15px] sm:px-0 sm:h-fit sm:block">
+            <div className="w-full sm:w-[480px] bg-white p-5 rounded-[10px]">
+                <h1 className="text-xl font-bold text-mainTextColor mb-2">Заявка отправлена</h1>
+                <p className="text-[15px]">Ваша заявка успешно отправлена! Мы свяжемся с вами в скором времени.</p>
+                <div className="flex justify-end mt-3.5">
+                    <Button onClick={closeWindow} size="sm" className="w-[170px]" aria-label="Кнопка для закрытия окна">Продолжить</Button>
+                </div>
+            </div>
+        </section>
 
     return <Form {...form}>
         <form
@@ -54,6 +81,7 @@ const CartForm: React.FC<CartFormProps> = ({ cart, totalItems, cartTotalPrice, c
             className="bg-white w-full sm:w-[380px] px-[15px] pt-8 pb-14 sm:pb-6 space-y-5 rounded-t-[22px] sm:rounded-[15px]"
         >
             <h1 className="text-center text-2xl font-bold text-mainTextColor">Форма для заявки</h1>
+            {isError && <p className="text-sm text-center text-redColor">Произошла ошибка, попробуйте еще раз.</p>}
             <FormField
                 control={form.control}
                 name="name"
