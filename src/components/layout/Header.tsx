@@ -35,7 +35,7 @@ export default function Header() {
     }, []);
 
     return <header className="w-full xl:flex xl:flex-col xl:items-center">
-        <div className="w-full flex items-center justify-between p-[15px] fixed top-0 z-[3] backdrop-blur-[20px] sm:px-6 sm:py-5 md:px-10 lg:static lg:px-[90px] xl:px-0 xl:w-[1050px]">
+        <div className="w-full flex items-center justify-between p-[15px] fixed top-0 z-[4] backdrop-blur-[20px] sm:px-6 sm:py-5 md:px-10 lg:static lg:px-[90px] xl:px-0 xl:w-[1050px]">
             <Link href="/" onClick={closeMenu}>
                 <Image src="/images/home/logo.png" alt="Galaxy Dental Clinic" width="170" height="36"/>
             </Link>
