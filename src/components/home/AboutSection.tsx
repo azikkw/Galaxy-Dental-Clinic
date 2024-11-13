@@ -6,7 +6,7 @@ const AboutSection = () => {
         <div className="lg:flex lg:items-center lg:justify-between lg:gap-10">
             <div className="mb-6 md:mb-4 lg:m-0 lg:order-2 lg:w-[500px] lg:h-[330px] lg:flex lg:flex-col lg:justify-between xl:h-[300px]">
                 <Title title="Стоматологическая клиника Galaxy Dental Clinic." className="!text-3xl !leading-10 mb-5 lg:m-0"/>
-                <div>
+                <div className="mb-5 lg:m-0">
                     <p className="text-mainTextColor font-semibold text-[16px]">
                         Мы на рынке более 4 лет,
                         <span className="underline">наша миссия:</span>
