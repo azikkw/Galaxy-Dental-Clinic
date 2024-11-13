@@ -13,8 +13,8 @@ const TwoGisSection = () => {
                 <Button variant="green" size="lg" className="w-[170px] text-[17px]" aria-label="Ссылка на 2ГИС">Посмотреть</Button>
             </Link>
         </div>
-        <Link href="https://go.2gis.com/z4vmv" target="_blank" className="block md:mb-0 sm:ml-10">
-            <Image src="/images/home/2gis.png" alt="2ГИС" fill className="!static !w-[300px] sm:!w-[400px] sm:mt-3.5 mb-[18px]"/>
+        <Link href="https://go.2gis.com/z4vmv" target="_blank" className="block md:mb-0 sm:ml-10" aria-label="Ссылка на отзывы в 2ГИС">
+            <Image src="/images/home/2gis.png" alt="2ГИС" width="2500" height="700" className="w-[300px] sm:w-[400px] sm:mt-3.5 mb-[18px]"/>
             <div className="flex items-center gap-2.5">
                 <Rating amount={5} ratingClassName="gap-2.5 ml-0.5 -mt-0.5" starClassName="size-[21px]"/>
                 <span className="text-xl font-bold text-mainTextColor">4.9</span>

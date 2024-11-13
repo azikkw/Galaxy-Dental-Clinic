@@ -41,7 +41,7 @@ export default function Cart() {
         return <MainBlock>
             <section className="flex flex-col items-center text-center mt-12 sm-custom:mt-16 sm:mt-[140px] lg:mt-10 mb-[150px]">
                 <div className="w-[280px] sm:w-[300px] mb-5">
-                    <Image src="/images/home/empty.png" alt="Корзина пуста" fill className="!static !w-full !h-full"/>
+                    <Image src="/images/home/empty.png" alt="Корзина пуста" loading="eager" priority width="980" height="716" className="w-full h-full"/>
                 </div>
                 <Title title="Ваша корзина пуста" className="mb-3"/>
                 <p>В вашей корзиние нету услуг. Вернитесь и добавьте их!</p>

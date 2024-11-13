@@ -19,7 +19,7 @@ const PromotionsSection = () => {
                     <p className="font-bold text-[17px] hidden lg:block">С 11 по 28 ноября</p>
                 </Link>
             </div>
-            <Image src="/images/home/promotion.png" alt="Команда Galaxy Dental Clinic" fill className="!static !w-full !h-[220px] object-cover sm-custom:!h-auto lg:!w-auto md:-mb-3 md:-mr-10 lg:!h-[250px] xl:!h-[265px]"/>
+            <Image src="/images/home/promotion.png" alt="Команда Galaxy Dental Clinic" width="1200" height="578" className="w-full h-[220px] object-cover sm-custom:h-auto md:-mb-3 md:-mr-10 lg:w-auto lg:h-[250px] xl:h-[265px]"/>
         </div>
     </section>
 }

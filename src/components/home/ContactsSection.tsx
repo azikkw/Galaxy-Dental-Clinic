@@ -8,8 +8,8 @@ const ContactsSection = () => {
         <Title title="Контакты" className="mb-6"/>
         <ul className="flex flex-col gap-2.5 mb-7 md:flex-row md:items-center md:gap-10">
             {
-                companyInfo.map((link, index) => (
-                    <li key={index}>
+                companyInfo.map((link) => (
+                    <li key={link.href} aria-label={link.ariaLabel}>
                         <Link href={link.href} className="flex items-center gap-2 md:flex-col md:text-center lg:flex-row lg:hover:underline">
                             <link.icon className="w-6 h-6 text-mainBlueColor"/>{link.label}
                         </Link>

@@ -25,7 +25,7 @@ const WelcomeSection = () => {
                 </Link>
             </div>
             <div className="lg:absolute lg:right-5 xl:-right-16 -z-[1] w-full lg:w-fit">
-                <Image src="/images/home/aligners1.png" alt="Команда Galaxy Dental Clinic" fill className="!static !w-full lg:!-mt-6 lg:ml-20 lg:!w-[580px]"/>
+                <Image src="/images/home/aligners.png" alt="Команда Galaxy Dental Clinic" loading="eager" priority width="1100" height="1100" className="relative w-full lg:-mt-6 lg:ml-20 lg:w-[580px]"/>
             </div>
         </div>
     </section>

@@ -57,7 +57,7 @@ const Service: React.FC<ServiceProps> = ({ service, servicePrice }) => {
                 <span className="text-lg md:text-[17px] lg:text-lg">{service.description}</span>
             </div>
             <div className="w-full absolute right-0 bottom-0 flex justify-center md:static sm:w-[550px] md:w-[460px]">
-                <Image src={service.img} alt={service.name} fill className="!static !w-full object-cover rounded-b-[20px] lg:rounded-none" />
+                <Image src={service.img} alt={service.name} width="1700" height="1150" loading="eager" priority className="w-full object-cover rounded-b-[20px] lg:rounded-none" />
             </div>
         </section>
         <section className="mt-[500px] sm-custom:mt-[600px] md:mt-20">
@@ -113,7 +113,7 @@ const Service: React.FC<ServiceProps> = ({ service, servicePrice }) => {
                 <div className="flex flex-col sm:flex-row gap-6">
                     {
                         availableDoctors.map((doctor) => (
-                            <DoctorCard key={doctor.id} doctor={doctor} className="w-full lg:w-[360px]"/>
+                            <DoctorCard key={doctor.id} doctor={doctor} className="w-full lg:w-[340px]"/>
                         ))
                     }
                 </div>

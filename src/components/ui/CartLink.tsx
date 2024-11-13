@@ -26,6 +26,7 @@ const CartLink: FC<CartLinkProps> = ({ generalClassName, textClassName, isFixed 
             pathname === "/cart" && "lg:!bg-mainBlueColor",
             generalClassName)
         }
+        aria-label="Ссылка на корзину"
     >
         <CartIcon className={clsx(
             "size-[26px] mb-0.5 text-white lg:size-[22px] lg:text-mainBlueColor lg:group-hover:text-white",

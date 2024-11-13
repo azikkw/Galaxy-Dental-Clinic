@@ -11,9 +11,11 @@ interface VideoCardProps {
     previewImg: string,
     video: string,
     imgClassName?: string
+    imgWidth: number
+    imgHeight: number
 }
 
-const VideoCard: React.FC<VideoCardProps> = ({previewImg, video, imgClassName}) => {
+const VideoCard: React.FC<VideoCardProps> = ({previewImg, video, imgWidth, imgHeight, imgClassName}) => {
 
     const [showVideo, setShowVideo] = useState(false);
     const closeWindow = () => setShowVideo(false);
@@ -27,7 +29,7 @@ const VideoCard: React.FC<VideoCardProps> = ({previewImg, video, imgClassName}) 
     return <div className="w-full cursor-pointer">
         <div className={cn("group relative", imgClassName)} onClick={() => setShowVideo(true)} >
             <PlayerIcon className="size-[75px] absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-[2] lg:transition-all lg:duration-200 lg:size-[70px] lg:group-hover:scale-110" />
-            <Image src={previewImg} alt="Video preview img" fill className="!static !w-full object-cover rounded-[15px]"/>
+            <Image src={previewImg} alt="Video preview img" width={imgWidth} height={imgHeight} className="w-full h-full object-cover rounded-[15px]"/>
         </div>
         { showVideo && ReactDOM.createPortal(VideoModal, document.body) }
     </div>

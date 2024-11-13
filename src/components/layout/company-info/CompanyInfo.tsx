@@ -13,7 +13,7 @@ export default function CompanyInfo({ onClose }: { onClose?: () => void }) {
                 {
                     navigation.map((link) => (
                         <li key={link.href} className="relative lg:hover:underline">
-                            <Link href={link.href} onClick={onClose}>
+                            <Link href={link.href} onClick={onClose} aria-label={link.ariaLabel}>
                                 {link.label}
                                 {
                                     link.label === "Акции" && link.promotionsAmount !== 0 &&
@@ -29,9 +29,9 @@ export default function CompanyInfo({ onClose }: { onClose?: () => void }) {
             <span>Контакты</span>
             <ul className={styles.info}>
                 {
-                    companyInfo.map((link, index) => (
-                        <li key={index}>
-                            <Link href={link.href}><link.icon/>{link.label}</Link>
+                    companyInfo.map((link) => (
+                        <li key={link.href}>
+                            <Link href={link.href} aria-label={link.ariaLabel}><link.icon/>{link.label}</Link>
                         </li>
                     ))
                 }

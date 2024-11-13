@@ -26,7 +26,7 @@ const Doctor: React.FC<DoctorProps> = ({ doctor, doctorWorks }) => {
         <UseBreadcrumb breadcrumbs={breadcrumbs}/>
         <section className="mt-7 sm:mt-8 sm:flex sm:items-center sm:gap-8">
             <div className="w-[160px] h-[160px] overflow-hidden rounded-full border border-[#D8DCE4]">
-                <Image src={doctor.img} alt={doctor.name} fill className="!static w-full scale-150 mt-8"/>
+                <Image src={doctor.img} alt={doctor.name} width="1500" height="1500" loading="eager" priority className="static w-full scale-150 mt-8"/>
             </div>
             <div className="mt-3.5 sm:mt-0">
                 <h1 className="text-[30px] text-mainTextColor font-bold sm:text-[33px]">{doctor.name}</h1>

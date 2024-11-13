@@ -12,8 +12,8 @@ import { navigation } from "@/data/companyInfo";
 import NotEmpty from "@/components/ui/NotEmpty";
 
 const linkList = [
-    { href: "https://go.2gis.com/z4vmv", label: "г. Астана, ул. Керей-Жанибек хандар 22", icon: LocationIcon },
-    { href: "tel:+77757470816", label: "+7 775 747-08-16", icon: PhoneIcon }
+    { href: "https://go.2gis.com/z4vmv", label: "г. Астана, ул. Керей-Жанибек хандар 22", icon: LocationIcon, ariaLabel: "Ссылка на местоположение в 2ГИС" },
+    { href: "tel:+77757470816", label: "+7 775 747-08-16", icon: PhoneIcon, ariaLabel: "Ссылка на номер телефона" }
 ]
 
 export default function Header() {
@@ -36,8 +36,8 @@ export default function Header() {
 
     return <header className="w-full xl:flex xl:flex-col xl:items-center">
         <div className="w-full flex items-center justify-between p-[15px] fixed top-0 z-[4] backdrop-blur-[20px] sm:px-6 sm:py-5 md:px-10 lg:static lg:px-[90px] xl:px-0 xl:w-[1050px]">
-            <Link href="/" onClick={closeMenu}>
-                <Image src="/images/home/logo.png" alt="Galaxy Dental Clinic" width="170" height="36"/>
+            <Link href="/" onClick={closeMenu} aria-label="Ссылка на главную страницу">
+                <Image src="/images/home/logo.png" alt="Galaxy Dental Clinic" width="1080" height="230" loading="eager" priority className="w-[170px]" />
             </Link>
             {
                 menuOpen ? <CloseIcon className="w-8 h-8 m-1 text-mainTextColor lg:hidden" onClick={() => setMenuOpen(false)}/>
@@ -46,7 +46,7 @@ export default function Header() {
                             {
                                 linkList.map((link, index) => (
                                     <li key={index}>
-                                        <Link className="flex items-center gap-2 lg:hover:underline" href={link.href} target="_blank">
+                                        <Link className="flex items-center gap-2 lg:hover:underline" href={link.href} target="_blank" aria-label={link.ariaLabel}>
                                             <link.icon className="size-5 text-mainBlueColor"></link.icon> {link.label}
                                         </Link>
                                     </li>
@@ -70,6 +70,7 @@ export default function Header() {
                                         "text-mainBlueColor": isFixed && pathname === link.href
                                     }
                                 )}
+                                aria-label={link.ariaLabel}
                             >
                                 {link.label}
                                 {

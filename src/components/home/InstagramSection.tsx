@@ -12,7 +12,7 @@ const InstagramSection = () => {
                 <Button size="lg" className="w-[230px] text-[17px]" aria-label="Ссылка на инстаграм">Подписаться на блог</Button>
             </Link>
         </div>
-        <Image src="/images/home/instagram.png" alt="2ГИС" fill className="!static !w-full sm:!w-[280px] sm:ml-[60px] md:!w-[320px] lg:!w-[380px] mt-10 md:mt-0"/>
+        <Image src="/images/home/instagram.png" alt="2ГИС" width="978" height="2000" className="w-full sm:w-[280px] sm:ml-[60px] md:w-[320px] lg:w-[380px] mt-10 md:mt-0"/>
     </section>
 }
 export default InstagramSection;
