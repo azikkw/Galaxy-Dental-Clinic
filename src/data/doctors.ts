@@ -9,7 +9,7 @@ export interface DoctorInterface {
 export interface DoctorWorksInterface {
     id: string,
     works: {
-        before: string,
+        before?: string,
         after: string,
         description: string
     }[]
@@ -40,7 +40,8 @@ const doctorWorks: DoctorWorksInterface[] = [
             { before: "/images/doctors/d2/b3.jpg", after: "/images/doctors/d2/a3.jpg", description: "Классическое удаление зуба мудрости, без каких-либо дополнительных манипуляций." },
             { before: "/images/doctors/d2/b4.jpg", after: "/images/doctors/d2/a4.jpg", description: "Удаление корня 3.5 зуба с хроническим гранулёматозным периодонтитом." },
             { before: "/images/doctors/d2/b5.jpg", after: "/images/doctors/d2/a5.jpg", description: "Удаление зуба мудрости с изогнутым медиальным корнем, который препятствовал удалению классическим методом. В связи с этим пришлось прибегнуть к продольной диссекции зуба и дальнейшему удалению классическим методом." },
-            { before: "/images/doctors/d2/b5.jpg", after: "/images/doctors/d2/a5.jpg", description: "Удаление  вертикально дистопированного зуба мудрости с ещё не развитыми полностью корнями по ортодонтическим показаниям." }
+            { before: "/images/doctors/d2/b6.jpg", after: "/images/doctors/d2/a6.jpg", description: "Удаление  вертикально дистопированного зуба мудрости с ещё не развитыми полностью корнями по ортодонтическим показаниям." },
+            { after: "/images/doctors/d2/a7.jpg", description: "Коронка после имплантации в области зуба 1.5. Импользован имплант AnyOne компании Megagen." }
         ]
     },
     {

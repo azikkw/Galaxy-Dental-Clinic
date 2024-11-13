@@ -40,12 +40,20 @@ const Doctor: React.FC<DoctorProps> = ({ doctor, doctorWorks }) => {
                 {
                     doctorWorks.works.map((work, index) => (
                         <div key={index} className="w-full">
-                            <ReactCompareSlider
-                                className="w-full md:h-auto rounded-[15px] mb-2 sm:mb-3"
-                                itemOne={<ReactCompareSliderImage src={work.before} alt={`Работа до от ${doctor.name}`}/>}
-                                itemTwo={<ReactCompareSliderImage src={work.after} alt={`Работа после от ${doctor.name}`}/>}
-                                onlyHandleDraggable
-                            />
+                            {
+                                work.before ? <ReactCompareSlider
+                                    className="w-full md:h-auto rounded-[15px] mb-2 sm:mb-3"
+                                    itemOne={<ReactCompareSliderImage src={work.before} alt={`Работа до от ${doctor.name}`}/>}
+                                    itemTwo={<ReactCompareSliderImage src={work.after} alt={`Работа после от ${doctor.name}`}/>}
+                                    onlyHandleDraggable
+                                /> : <Image
+                                    src={work.after}
+                                    alt={`Работа после от ${doctor.name}`}
+                                    width="1500"
+                                    height="700"
+                                    className="w-full md:h-auto rounded-[15px] mb-2 sm:mb-3"
+                                />
+                            }
                             <span className="sm:text-[17px] lg:text-base">{work.description}</span>
                         </div>
                     ))
