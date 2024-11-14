@@ -11,7 +11,7 @@ import { RootState } from "@/lib/store";
 import { useDispatch, useSelector } from "react-redux";
 import {removeAll, removeServiceFully, setFormIsNotSent} from "@/lib/features/cartSlice";
 import { BinIcon } from "@/icons/defaultIcons";
-import { formatNumber } from "@/utils/utils";
+import { formatCartPrice } from "@/utils/serviceCartUtils";
 import CartForm from "@/components/pages/cart/CartForm";
 import PopupWindow from "@/components/ui/PopupWindow";
 import AboutCartSection from "@/components/home/AboutCartSection";
@@ -86,7 +86,7 @@ export default function Cart() {
                                 </button>
                                 <CartOperations service={service.name} className="!w-fit"/>
                                 <p className="text-mainTextColor font-semibold text-lg">
-                                    {formatNumber(service.totalPrice)}
+                                    {formatCartPrice(service.totalPrice)}
                                     <span className="font-medium"> ₸</span>
                                 </p>
                             </div>
@@ -103,7 +103,7 @@ export default function Cart() {
                 <div className="flex items-center justify-between text-mainTextColor mb-5">
                     <span>Общая сумма</span>
                     <p className="font-semibold text-[19px]">
-                        {formatNumber(cartTotalPrice)} <span className="font-medium"> ₸</span>
+                        {formatCartPrice(cartTotalPrice)} <span className="font-medium"> ₸</span>
                     </p>
                 </div>
                 <Button onClick={() => setShowForm(true)} size="lg" className="w-full text-[17px] lg:text-base" aria-label="Кнопка для открытия формы заявки">Оставить заявку</Button>

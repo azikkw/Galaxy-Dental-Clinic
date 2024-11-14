@@ -17,7 +17,7 @@ const WelcomeSection = () => {
                     <li className="bg-thirdBlueColor text-center px-3 py-2 rounded-lg">🔬3Д-сканирование</li>
                     <li className="bg-mainBlueColor text-center px-3 py-2 rounded-lg">📷Фотопротокол</li>
                 </ul>
-                <h3 className="sm:text-[17px] mb-7 sm:w-[500px] lg:mb-9"><span className="font-bold">Только 27 ноября, </span>первым 3-м пациентам, которые совершили оплату <span className="font-bold text-redColor">скидка 10%</span> на элайнеры!</h3>
+                <h3 className="sm:text-[17px] mb-7 sm:w-[500px] lg:mb-9"><span className="font-bold">Только 27 ноября, </span>первым 3-м пациентам, которые совершили оплату <span className="font-bold text-redColor">скидка 10%</span> на элайнеры Invisalign!</h3>
                 <Link href="https://zapis-galaxy.pulse.is/?fbclid=PAZXh0bgNhZW0CMTEAAaYb6sxbuwYaCWSSNzivY0dG2X25qHMuGwOk_dqJTUWQrjDstcQXSQIw3v0_aem_iqEQQeZLB43S5a1VWl2vMQ" target="_blank">
                     <Button variant="green" size="lg" className="w-[230px] text-[19px] !py-[27px] lg:w-[225px]" aria-label="Кнопка для узнать больше">
                         <AppointmentIcon className="!w-6 !h-6"/> Узнать больше

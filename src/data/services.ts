@@ -48,13 +48,27 @@ export const services: ServiceCardInterface[] = [
 ]
 export const servicePage: ServicesInterface[] = [
     { id: "s1", name: "Проф. гигиена", description: "Комплексная чистка и уход за зубами и деснами", img: "/images/services/s1.png", categories: ["Проф. гигиена"] },
-    { id: "s2", name: "Терапия", description: "Лечение кариеса, пульпита и разных инфекций", img: "/images/services/s2.png", categories: ["EsCom (Юж.Корея)", "EstelitePalfique (Япония)", "Художественная рестоврация", "Дополнительно"] },
+    { id: "s2", name: "Терапия", description: "Лечение кариеса, пульпита и разных инфекций", img: "/images/services/s2.png", categories: ["EsCom (Юж.Корея)", "EstelitePalfique (Япония)", "Художественная реставрация", "Дополнительно"] },
     { id: "s3", name: "Хирургия", description: "Операция по удалению и сохранению зубов", img: "/images/services/s3.png", categories: ["Хирургия", "Дополнительно"] },
     { id: "s4", name: "Имплантация", description: "Восстановление зуба с помощью импланта", img: "/images/services/s4.png", categories: ["Имплантация", "Дополнительно"] },
     { id: "s5", name: "Ортопедия", description: "Восстановление зубов с помощью коронок", img: "/images/services/s5.png", categories: ["Съемные конструкции", "Несъёмные конструкции", "Дополнительно"] },
     { id: "s6", name: "Ортодонтия", description: "Исправление зубов и установка брекет-систем", img: "/images/services/s6.png", categories: ["Ортодонтия", "Детская ортодонтия"] },
     { id: "s7", name: "Продажи", description: "Полезные вещи для ухода за зубами и деснами", img: "/images/services/s7.png", categories: ["Продажи"] },
 ]
+
+// const getDollarToTengeRate = async (num: number): Promise<number> => {
+//     try {
+//         const response = await fetch('/api/currency', { method: 'GET' });
+//         const data = await response.json();
+//         const dollar = data.data?.conversion_rates?.KZT || 0;
+//         const amount = num * dollar;
+//         return Math.round(amount);
+//     } catch(error) {
+//         console.error('Ошибка при получении данных валюты:', error);
+//         return 0;
+//     }
+// }
+
 const servicesPrice: ServicePriceInterface[] = [
     {
         id: "s1",
@@ -183,10 +197,6 @@ const servicesPrice: ServicePriceInterface[] = [
                             {
                                 service: "Лечение клиновидного дефекта",
                                 amount: 21970
-                            },
-                            {
-                                service: "Художественная реставрация зуба",
-                                amount: "от 33 800"
                             }
                         ]
                     },
@@ -239,11 +249,15 @@ const servicesPrice: ServicePriceInterface[] = [
                 ]
             },
             {
-                name: "Художественная рестоврация",
+                name: "Художественная реставрация",
                 types: [
                     {
-                        name: "Художественная рестоврация",
+                        name: "Художественная реставрация",
                         price: [
+                            {
+                                service: "Художественная реставрация зуба",
+                                amount: "от 33 800"
+                            },
                             {
                                 service: "Художественная реставрация фронтальной группы зубов Estelite Asteria (Япония)",
                                 amount: 45000
@@ -575,6 +589,14 @@ const servicesPrice: ServicePriceInterface[] = [
                                 amount: 1200000
                             },
                             {
+                                service: "Имплантация по методике \"All on 4\" + временный протез (импланты \"AnyRidge\")",
+                                amount: 1300000
+                            },
+                            {
+                                service: "Имплантация по методике \"All on 6\" + временный протез (импланты \"AnyRidge\")",
+                                amount: 1500000
+                            },
+                            {
                                 service: "Установка формирователя десны импланта \"Straumann\" (Швейцария)",
                                 amount: 50000
                             },
@@ -624,7 +646,7 @@ const servicesPrice: ServicePriceInterface[] = [
                             },
                             {
                                 service: "S1 костный материал 0,5гр (Корея)",
-                                amount: "146  000"
+                                amount: 146000
                             },
                             {
                                 service: "S1 костный материал 1,0 гр (Корея)",
@@ -651,16 +673,20 @@ const servicesPrice: ServicePriceInterface[] = [
                                 amount: 44000
                             },
                             {
-                                service: "COLLA коллагеновая мембрана 10х20мм (Корея)",
+                                service: "COLLA коллагеновая мембрана 15х20мм (Корея)",
                                 amount: 52000
                             },
                             {
-                                service: "COLLA коллагеновая мембрана 10х20мм (Корея)",
+                                service: "COLLA коллагеновая мембрана 20х30мм (Корея)",
                                 amount: 80000
                             },
                             {
-                                service: "COLLA коллагеновая мембрана 10х20мм (Корея)",
+                                service: "COLLA коллагеновая мембрана 30х40мм (Корея)",
                                 amount: 124000
+                            },
+                            {
+                                service: "Хирургический шаблон",
+                                amount: 100000
                             },
                             {
                                 service: "Удаление имплантанта (от сложности)",
@@ -718,19 +744,31 @@ const servicesPrice: ServicePriceInterface[] = [
                         price: [
                             {
                                 service: "Съёмный протез 1 челюсть",
-                                amount: 60000
+                                amount: 100000
                             },
                             {
-                                service: "Термобюгельный протез",
-                                amount: 90000
+                                service: "Частичный съемный протез на одну челюсть",
+                                amount: 80000
+                            },
+                            {
+                                service: "Бюгельный протез 1 челюсть",
+                                amount: 120000
+                            },
+                            {
+                                service: "Бюгельный протез на замках 1 челюсть",
+                                amount: 150000
+                            },
+                            {
+                                service: "Бюгельный протез на балке 1 челюсть",
+                                amount: 400000
                             },
                             {
                                 service: "Нейлоновый протез",
-                                amount: 90000
+                                amount: 120000
                             },
                             {
                                 service: "Микропротез",
-                                amount: 25000
+                                amount: 45000
                             },
                             {
                                 service: "Аттачмены",
@@ -743,6 +781,22 @@ const servicesPrice: ServicePriceInterface[] = [
                             {
                                 service: "Протезирование на телескопах 1 челюсть",
                                 amount: 250000
+                            },
+                            {
+                                service: "Штифтовая/культевая вкладка КХС",
+                                amount: 20000
+                            },
+                            {
+                                service: "Штифтовая/культевая вкладка КХС многокорневая",
+                                amount: 25000
+                            },
+                            {
+                                service: "Штифтовая/культевая вкладка цирконевая",
+                                amount: 55000
+                            },
+                            {
+                                service: "Цифровое интраоральное 3D-сканирование зубов",
+                                amount: 50000
                             }
                         ]
                     }
@@ -775,6 +829,10 @@ const servicesPrice: ServicePriceInterface[] = [
                                 amount: 120000
                             },
                             {
+                                service: "Винир, коронка керамическая (Дисиликат)",
+                                amount: 130000
+                            },
+                            {
                                 service: "Вкладка, накладки Emax",
                                 amount: 110000
                             },
@@ -784,15 +842,15 @@ const servicesPrice: ServicePriceInterface[] = [
                             },
                             {
                                 service: "\"All on 4,  All on 6\"  на цирконии за 1 ед",
-                                amount: 100000
+                                amount: 130000
                             },
                             {
                                 service: "Коронка металлокерамическая на зуб",
-                                amount: 35000
+                                amount: 65000
                             },
                             {
                                 service: "Коронка металлокерамическая на импланте",
-                                amount: 80000
+                                amount: 90000
                             },
                             {
                                 service: "Циркониевая коронка на зуб",
@@ -800,15 +858,23 @@ const servicesPrice: ServicePriceInterface[] = [
                             },
                             {
                                 service: "Восковое моделирование (WaxUp) 1 ед.",
-                                amount: "от 5 000"
+                                amount: 10000
                             },
                             {
-                                service: "Временная коронка (ПМА) ",
-                                amount: 20000
+                                service: "Временная коронка (ПМА, Лабораторная работа) ",
+                                amount: 25000
+                            },
+                            {
+                                service: "Временная коронка на импланте (ПМА)",
+                                amount: 50000
                             },
                             {
                                 service: "Временная коронка (Protemt 4)",
                                 amount: 15000
+                            },
+                            {
+                                service: "Цифровое интраоральное 3D-сканирование зубов",
+                                amount: 50000
                             }
                         ]
                     }
@@ -850,6 +916,10 @@ const servicesPrice: ServicePriceInterface[] = [
                     {
                         name: "Дополнительные расходы",
                         price: [
+                            {
+                                service: "Оклюфаст (Occlufast) для регистрации прикуса",
+                                amount: 5000
+                            },
                             {
                                 service: "Снятие штампованной коронки ( 1 ед.)",
                                 amount: 3500
@@ -927,14 +997,18 @@ const servicesPrice: ServicePriceInterface[] = [
                             },
                             {
                                 service: "Элайнеры Invisalign",
-                                amount: 2500000
+                                amount: "4900$"
+                            },
+                            {
+                                service: "Диагностика для Invisalign",
+                                amount: "600$"
                             },
                             {
                                 service: "Установка апарата MSE ",
                                 amount: 350000
                             },
                             {
-                                service: "Clean Check",
+                                service: "Функциональная диагностика",
                                 amount: 200000
                             },
                             {
@@ -992,6 +1066,10 @@ const servicesPrice: ServicePriceInterface[] = [
                             {
                                 service: "Разбор снимка по ТРГ, 3Д с составлением плана лечения",
                                 amount: 5000
+                            },
+                            {
+                                service: "Цифровое интраоральное 3D-сканирование зубов",
+                                amount: 50000
                             }
                         ]
                     }
@@ -1065,7 +1143,7 @@ const servicesPrice: ServicePriceInterface[] = [
                             },
                             {
                                 service: "Держатель места",
-                                amount: 100000
+                                amount: 18000
                             },
                             {
                                 service: "Лицевая маска",

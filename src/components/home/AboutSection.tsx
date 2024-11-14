@@ -4,7 +4,7 @@ import Image from "next/image";
 const AboutSection = () => {
     return <section id="about" className="lg:mt-5">
         <div className="lg:flex lg:items-center lg:justify-between lg:gap-10">
-            <div className="mb-6 md:mb-4 lg:m-0 lg:order-2 lg:w-[500px] lg:h-[330px] lg:flex lg:flex-col lg:justify-between xl:h-[300px]">
+            <div className="mb-6 md:mb-4 lg:m-0 lg:order-2 lg:w-[500px] lg:h-[330px] lg:flex lg:flex-col lg:justify-between xl:h-[310px]">
                 <Title title="Стоматологическая клиника Galaxy Dental Clinic." className="!text-3xl !leading-10 mb-5 lg:m-0"/>
                 <div className="mb-5 lg:m-0">
                     <p className="text-mainTextColor font-semibold text-[16px]">
@@ -18,7 +18,7 @@ const AboutSection = () => {
                     </p>
                 </div>
                 <p className="text-[16px]">
-                    Сделайте шаг к здоровой и красивой улыбке вместе с нами. Мы предлагаем индивидуальный подход для каждого пациента. Присоединяйтесь к нашему сообществу счастливых людей!
+                    Сделайте шаг к здоровой и красивой улыбке вместе с нами. Мы предлагаем индивидуальный подход для каждого пациента. Присоединяйтесь к нашему сообществу счастливых людей! Высокие стандарты.
                 </p>
             </div>
             <div className="w-full lg:w-[530px] lg:h-[330px] xl:h-[320px]">

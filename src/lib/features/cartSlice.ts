@@ -22,9 +22,9 @@ const initialState: CartInterface = {
 }
 
 const parsePrice = (price: number | string): { amount: number, prefix: string } => {
-    if(typeof price === "number") return { amount: price, prefix: "" };
+    if(typeof price === "number") return { amount: price, prefix: "" }
 
-    const rangeMatch = price.match(/^(\d+)-(\d+)$/);
+    const rangeMatch = price.match(/^(\d+)-(\d+)$/)
     if(rangeMatch) {
         const minAmount = parseFloat(rangeMatch[1]);
         return { amount: isNaN(minAmount) ? 0 : minAmount, prefix: "от " };

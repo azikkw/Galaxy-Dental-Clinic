@@ -15,7 +15,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { addToCart, CartItem } from "@/lib/features/cartSlice";
 import { Button } from "@/components/ui/Button";
 import { AddToCartIcon } from "@/icons/defaultIcons";
-import { formatNumber } from "@/utils/utils";
+import PriceComponent from "@/components/ui/PriceComponent";
+import {convertNumber} from "@/utils/serviceCartUtils";
 
 interface ServiceProps {
     service: ServicesInterface;
@@ -44,6 +45,17 @@ const Service: React.FC<ServiceProps> = ({ service, servicePrice }) => {
         setSelectedServiceCategory(category);
         setActiveCategory(name);
     }
+
+    const handleAddToCart = async (amount: number | string, serviceName: string) => {
+        const convertedPrice = await convertNumber(amount, serviceName);
+        if(convertedPrice !== undefined && convertedPrice !== null) {
+            dispatch(addToCart({
+                name: serviceName,
+                price: convertedPrice,
+                category: activeCategory
+            }));
+        }
+    };
 
     const serviceInCart = (serviceName: string): boolean => {
         return cart.some((service) => service.name === serviceName);
@@ -84,12 +96,10 @@ const Service: React.FC<ServiceProps> = ({ service, servicePrice }) => {
                                         <li key={index}
                                             className="flex flex-col gap-y-1 p-[15px] border-t border-mainBorderColor md:flex-row md:items-center md:px-7 md:py-[18px] lg:px-8">
                                             <span className="md:w-[65%]">{priceItem.service}</span>
-                                            <span className="text-mainTextColor text-[17px] font-semibold md:w-[21%] md:pl-[5%] lg:text-base lg:font-medium">
-                                                {formatNumber(priceItem.amount)} ₸
-                                            </span>
+                                            <PriceComponent amount={priceItem.amount} serviceName={priceItem.service}/>
                                             {
                                                 !serviceInCart(priceItem.service) ? <button
-                                                    onClick={() => dispatch(addToCart({name: priceItem.service, price: priceItem.amount, category: activeCategory}))}
+                                                    onClick={() => handleAddToCart(priceItem.amount, priceItem.service)}
                                                     className="group w-full flex justify-end items-center gap-1.5 text-mainBlueColor md:w-[14%] lg:justify-start lg:text-secondTextColor lg:hover:text-mainBlueColor"
                                                     aria-label="Кнопка для добавления услуги в корзину"
                                                 >
