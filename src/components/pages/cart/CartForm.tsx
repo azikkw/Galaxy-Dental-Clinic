@@ -10,7 +10,7 @@ import { Button } from "@/components/ui/Button";
 import { RootState } from "@/lib/store";
 import { useDispatch, useSelector } from "react-redux";
 import { setFormIsSent } from "@/lib/features/cartSlice";
-import { formatCartPrice } from "@/utils/serviceCartUtils";
+import { formatPrice } from "@/utils/serviceCartUtils";
 
 const FormSchema = z.object({
     name: z.string().min(3, {
@@ -116,7 +116,7 @@ const CartForm: React.FC<CartFormProps> = ({ closeWindow }) => {
                 <li className="flex items-center justify-between">
                     <span>Общая сумма</span>
                     <p className="font-semibold text-mainTextColor text-[17px]">
-                        {formatCartPrice(cartTotalPrice)} <span className="font-medium"> ₸</span>
+                        {formatPrice(cartTotalPrice)} <span className="font-medium"> ₸</span>
                     </p>
                 </li>
             </ul>

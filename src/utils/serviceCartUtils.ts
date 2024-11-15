@@ -34,11 +34,6 @@ export const convertNumber = async (num: number | string, serviceName: string) =
     return num
 }
 
-export const formatServicePrice = async (num: number | string, serviceName: string) => {
-    num = await convertNumber(num, serviceName)
-    return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ")
-}
-
-export function formatCartPrice(num: number | string) {
+export function formatPrice(num: number | string) {
     return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ")
 }

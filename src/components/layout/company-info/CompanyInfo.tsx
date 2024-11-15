@@ -31,7 +31,9 @@ export default function CompanyInfo({ onClose }: { onClose?: () => void }) {
                 {
                     companyInfo.map((link) => (
                         <li key={link.href}>
-                            <Link href={link.href} aria-label={link.ariaLabel}><link.icon/>{link.label}</Link>
+                            <Link href={link.href} target="_blank" aria-label={link.ariaLabel}>
+                                <link.icon/>{link.label}
+                            </Link>
                         </li>
                     ))
                 }

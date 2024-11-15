@@ -86,21 +86,21 @@ const Service: React.FC<ServiceProps> = ({ service, servicePrice }) => {
                     selectedServiceCategory.types.map((category, index) => (
                         <div key={index} className="bg-[#C7D3E3] rounded-[15px] border border-mainBorderColor">
                             <ul className="flex items-center px-[15px] py-[18px] text-mainTextColor text-lg lg:text-[17px] font-semibold leading-[26px] md:px-7 md:py-5 lg:px-8">
-                                <li className="md:w-[65%]">{category.name}</li>
-                                <li className="hidden md:block md:w-[21%] md:pl-[5%]">Цена</li>
-                                <li className="hidden md:block md:w-[14%]">Корзина</li>
+                                <li className="md:w-[61%]">{category.name}</li>
+                                <li className="hidden md:block md:w-[26%] md:pl-[5%]">Цена</li>
+                                <li className="hidden md:block md:w-[13%]">Корзина</li>
                             </ul>
                             <ul className="bg-white rounded-b-[15px]">
                                 {
                                     category.price.map((priceItem, index) => (
                                         <li key={index}
                                             className="flex flex-col gap-y-1 p-[15px] border-t border-mainBorderColor md:flex-row md:items-center md:px-7 md:py-[18px] lg:px-8">
-                                            <span className="md:w-[65%]">{priceItem.service}</span>
-                                            <PriceComponent amount={priceItem.amount} serviceName={priceItem.service}/>
+                                            <span className="md:w-[61%]">{priceItem.service}</span>
+                                            <PriceComponent amount={priceItem.amount} disclaimer={priceItem.disclaimer}/>
                                             {
                                                 !serviceInCart(priceItem.service) ? <button
                                                     onClick={() => handleAddToCart(priceItem.amount, priceItem.service)}
-                                                    className="group w-full flex justify-end items-center gap-1.5 text-mainBlueColor md:w-[14%] lg:justify-start lg:text-secondTextColor lg:hover:text-mainBlueColor"
+                                                    className="group w-full flex justify-end items-center gap-1.5 text-mainBlueColor md:w-[11%] lg:justify-start lg:text-secondTextColor lg:hover:text-mainBlueColor"
                                                     aria-label="Кнопка для добавления услуги в корзину"
                                                 >
                                                     <AddToCartIcon className="size-6 lg:size-[22px]"/>

@@ -10,25 +10,26 @@ import {
 } from "@/icons/servicesIcons";
 
 export interface ServiceCardInterface {
-    id: string,
-    name: string,
-    description: string,
+    id: string
+    name: string
+    description: string
     icon: React.FC<SVGProps<SVGSVGElement>>
 }
 export interface ServicesInterface {
-    id: string,
-    name: string,
-    description: string,
-    img: string,
+    id: string
+    name: string
+    description: string
+    img: string
     categories: string[]
 }
 export interface ServiceCategoryInterface {
-    name: string,
+    name: string
     types: {
-        name: string,
+        name: string
         price: {
-            service: string,
+            service: string
             amount: number | string
+            disclaimer?: string
         }[]
     }[]
 }
@@ -55,19 +56,6 @@ export const servicePage: ServicesInterface[] = [
     { id: "s6", name: "Ортодонтия", description: "Исправление зубов и установка брекет-систем", img: "/images/services/s6.png", categories: ["Ортодонтия", "Детская ортодонтия"] },
     { id: "s7", name: "Продажи", description: "Полезные вещи для ухода за зубами и деснами", img: "/images/services/s7.png", categories: ["Продажи"] },
 ]
-
-// const getDollarToTengeRate = async (num: number): Promise<number> => {
-//     try {
-//         const response = await fetch('/api/currency', { method: 'GET' });
-//         const data = await response.json();
-//         const dollar = data.data?.conversion_rates?.KZT || 0;
-//         const amount = num * dollar;
-//         return Math.round(amount);
-//     } catch(error) {
-//         console.error('Ошибка при получении данных валюты:', error);
-//         return 0;
-//     }
-// }
 
 const servicesPrice: ServicePriceInterface[] = [
     {
@@ -386,10 +374,6 @@ const servicesPrice: ServicePriceInterface[] = [
                             {
                                 service: "Примерка винира",
                                 amount: 2000
-                            },
-                            {
-                                service: "Сканирование одной челюсти",
-                                amount: 10000
                             }
                         ]
                     }
@@ -958,7 +942,7 @@ const servicesPrice: ServicePriceInterface[] = [
                             },
                             {
                                 service: "Справка",
-                                amount: 3000
+                                amount: 5000
                             }
                         ]
                     }
@@ -997,11 +981,13 @@ const servicesPrice: ServicePriceInterface[] = [
                             },
                             {
                                 service: "Элайнеры Invisalign",
-                                amount: "4900$"
+                                amount: "4900$",
+                                disclaimer: "Зависит от курса доллара"
                             },
                             {
                                 service: "Диагностика для Invisalign",
-                                amount: "600$"
+                                amount: "600$",
+                                disclaimer: "Зависит от курса доллара"
                             },
                             {
                                 service: "Установка апарата MSE ",
@@ -1198,7 +1184,7 @@ const servicesPrice: ServicePriceInterface[] = [
                             },
                             {
                                 service: "Паста \"антикариес\"",
-                                amount: 4000
+                                amount: 4500
                             },
                             {
                                 service: "Паста \"Atomy\"",

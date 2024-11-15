@@ -16,8 +16,8 @@ export interface DoctorWorksInterface {
 }
 
 export const doctors: DoctorInterface[] = [
-    { id: "d1", name: "Арман Канатович", type: "Челюстно-лицевой хирург, хирург-имплантолог", img: "/images/doctors/d1/profile.jpg", experience: 12, services: ["s3", "s4"] },
-    { id: "d2", name: "Алмаз Нурланович", type: "Челюстно-лицевой хирург, хирург-имплантолог", img: "/images/doctors/d2/profile.jpg", experience: 12, services: ["s3", "s4"] },
+    { id: "d1", name: "Арман Канатович", type: "Челюстно-лицевой хирург, \nхирург-имплантолог", img: "/images/doctors/d1/profile.jpg", experience: 12, services: ["s3", "s4"] },
+    { id: "d2", name: "Алмаз Нурланович", type: "Челюстно-лицевой хирург, \nхирург-имплантолог", img: "/images/doctors/d2/profile.jpg", experience: 12, services: ["s3", "s4"] },
     { id: "d3", name: "Мират Дулатович", type: "Ортодонт-терапевт", img: "/images/doctors/d3/profile.jpg", experience: 5, services: ["s1", "s2", "s6"] },
     { id: "d4", name: "Зарина Рашидовна", type: "Ортодонт-терапевт", img: "/images/doctors/d4/profile.jpg", experience: 5, services: ["s1", "s2", "s6"] },
     { id: "d5", name: "Болат Базылбекович", type: "Ортопед", img: "/images/doctors/d5/profile.jpg", experience: 25, services: ["s5"] }
@@ -26,10 +26,10 @@ const doctorWorks: DoctorWorksInterface[] = [
     {
         id: "d1",
         works: [
-            { before: "/images/doctors/d1/b1.jpg", after: "/images/doctors/d1/a1.jpg", description: "Имплантация Зубов методом ALL-ON-6: Металлокерамика, протезирование." },
-            { before: "/images/doctors/d1/b2.jpg", after: "/images/doctors/d1/a2.jpg", description: "Имплантация Зубов методом ALL-ON-6 - полное протезирование." },
-            { before: "/images/doctors/d1/b3.jpg", after: "/images/doctors/d1/a3.jpg", description: "ALL-ON-6 верхней челюсти + протезирование, удаление несостоятельных зубов, срок имплантация + изготовление протезов: 5 дней" },
-            { before: "/images/doctors/d1/b4.jpg", after: "/images/doctors/d1/a4.jpg", description: "ALL-ON-6 верхней челюсти + протезирование, удаление несостоятельных зубов, срок имплантация + изготовление протезов: 5 дней" }
+            { before: "/images/doctors/d1/b1.jpg", after: "/images/doctors/d1/a1.jpg", description: "Имплантация методом ALL-ON-6: постоянное протезирование." },
+            { before: "/images/doctors/d1/b2.jpg", after: "/images/doctors/d1/a2.jpg", description: "Имплантация методом ALL-ON-6: полное временное протезирование." },
+            { before: "/images/doctors/d1/b3.jpg", after: "/images/doctors/d1/a3.jpg", description: "ALL-ON-6 верхней челюсти: удаление несостоятельных зубов, имплантация + изготовление протезов, 5 дней." },
+            { before: "/images/doctors/d1/b4.jpg", after: "/images/doctors/d1/a4.jpg", description: "ALL-ON-6 верхней челюсти: удаление несостоятельных зубов, имплантация + изготовление протезов, 5 дней." }
         ]
     },
     {
@@ -40,8 +40,7 @@ const doctorWorks: DoctorWorksInterface[] = [
             { before: "/images/doctors/d2/b3.jpg", after: "/images/doctors/d2/a3.jpg", description: "Удаление корня 3.5 зуба с хроническим гранулёматозным периодонтитом." },
             { before: "/images/doctors/d2/b4.jpg", after: "/images/doctors/d2/a4.jpg", description: "Удаление зуба мудрости с изогнутым медиальным корнем, который препятствовал удалению классическим методом. В связи с этим пришлось прибегнуть к продольной диссекции зуба и дальнейшему удалению классическим методом." },
             { before: "/images/doctors/d2/b5.jpg", after: "/images/doctors/d2/a5.jpg", description: "Удаление  вертикально дистопированного зуба мудрости с ещё не развитыми полностью корнями по ортодонтическим показаниям." },
-            { before: "/images/doctors/d2/b6.jpg", after: "/images/doctors/d2/a6.jpg", description: "Коронка после имплантации в области зуба 1.5. Импользован имплант AnyOne компании Megagen." },
-            { before: "/images/doctors/d2/b7.jpg", after: "/images/doctors/d2/a7.jpg", description: "Установлен имплант компании Straumann в области зуба 4.6. Через 4 месяца установлена коронка из диоксида циркония." },
+            { before: "/images/doctors/d2/b7.jpg", after: "/images/doctors/d2/a7.jpg", description: "Установлен имплант компании Straumann в области зуба 4.6. Через 4 месяца установлена коронка из диоксида циркония." }
         ]
     },
     {
@@ -67,10 +66,10 @@ const doctorWorks: DoctorWorksInterface[] = [
     {
         id: "d5",
         works: [
-            { before: "/images/doctors/d5/b1.jpg", after: "/images/doctors/d5/a1.jpg", description: "5 виниров и 2 цирк. коронки. Пациентка была не довольна цветом своих зубов. На постоянное выполнение пломб с 12 зуба." },
-            { before: "/images/doctors/d5/b2.jpg", after: "/images/doctors/d5/a2.jpg", description: "Установка циркониевого мостовидного протеза на имплантах Анкелоз Германия 11-22." },
-            { before: "/images/doctors/d5/b3.jpg", after: "/images/doctors/d5/a3.jpg", description: "Установка виниров." },
-            { before: "/images/doctors/d5/b4.jpg", after: "/images/doctors/d5/a4.jpg", description: "Цирконивые коронки на имплантах Дио Юк и виниры." },
+            { before: "/images/doctors/d5/b1.jpg", after: "/images/doctors/d5/a1.jpg", description: "5 виниров и 2 циркониевые коронки. Пациентка была не довольна цветом своих зубов. На постоянное выполнение пломб с 12 зуба." },
+            { before: "/images/doctors/d5/b2.jpg", after: "/images/doctors/d5/a2.jpg", description: "Установка коронок из диоксид циркония на имплантах Ankylos." },
+            { before: "/images/doctors/d5/b3.jpg", after: "/images/doctors/d5/a3.jpg", description: "Тотальное протезирование." },
+            { before: "/images/doctors/d5/b4.jpg", after: "/images/doctors/d5/a4.jpg", description: "Установка виниров." },
             { before: "/images/doctors/d5/b5.jpg", after: "/images/doctors/d5/a5.jpg", description: "Установка протезов на балочной фиксации." }
         ]
     }

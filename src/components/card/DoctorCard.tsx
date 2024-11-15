@@ -18,7 +18,7 @@ const DoctorCard: React.FC<DoctorProps> = ({ doctor, className }) => {
         <div className="px-[18px] py-[18px]">
             <div className="flex flex-col mb-[18px]">
                 <span className="text-[23px] font-bold text-mainTextColor lg:text-[21px]">{doctor.name}</span>
-                <span className="text-lg lg:text-[17px]">{doctor.type}</span>
+                <span className="text-lg lg:text-[17px] whitespace-pre-wrap">{doctor.type}</span>
                 <Rating amount={5} ratingClassName="gap-1.5 mt-2" starClassName="w-[18px] h-[18px]"/>
             </div>
             <Button className="w-full text-lg lg:!h-[52px] lg:text-[17px]" aria-label="Подробнее о враче">Подробнее...</Button>

@@ -18,5 +18,5 @@ export const reviews: ReviewInterface[] = [
     { id: "r10", video: "/videos/r10.mp4", previewImg: "/images/preview/r10.jpg", personName: "Меирлан" },
     { id: "r11", video: "/videos/r11.mov", previewImg: "/images/preview/r11.jpg", personName: "Айнур" },
     { id: "r12", video: "/videos/r12.mp4", previewImg: "/images/preview/r12.jpg", personName: "Зульфия" },
-    { id: "r13", video: "/videos/r13.mp4", previewImg: "/images/preview/r13.jpg", personName: "Пациент" },
+    { id: "r13", video: "/videos/r13.mp4", previewImg: "/images/preview/r13.jpg", personName: "Айгерим" },
 ]

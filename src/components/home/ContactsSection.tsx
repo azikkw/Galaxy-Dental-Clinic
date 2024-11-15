@@ -10,7 +10,7 @@ const ContactsSection = () => {
             {
                 companyInfo.map((link) => (
                     <li key={link.href} aria-label={link.ariaLabel}>
-                        <Link href={link.href} className="flex items-center gap-2 md:flex-col md:text-center lg:flex-row lg:hover:underline">
+                        <Link href={link.href} className="flex items-center gap-2 md:flex-col md:text-center lg:flex-row lg:hover:underline" target="_blank" aria-label={link.ariaLabel}>
                             <link.icon className="w-6 h-6 text-mainBlueColor"/>{link.label}
                         </Link>
                     </li>
