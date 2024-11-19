@@ -21,7 +21,7 @@ const CartOperations: React.FC<CartOperationsProps> = ({ service, className }) =
 
     return <div
         className={cn(
-            "flex items-center justify-end gap-3 text-mainBlueColor md:w-[14%] lg:justify-start lg:text-secondTextColor",
+            "flex items-center justify-end gap-3 text-mainBlueColor md:w-[11%] lg:justify-start lg:text-secondTextColor",
             className
         )}
     >
