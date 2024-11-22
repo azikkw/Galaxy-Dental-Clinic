@@ -6,7 +6,7 @@ import { AppointmentIcon } from "@/icons/defaultIcons";
 
 const PromotionsSection = () => {
     return <section id="promotions">
-        <Title title="Акции и скидки" className="mb-7"/>
+        <Title title="Акции" className="mb-7"/>
         <div className="bg-secondBlueColor pt-8 rounded-[15px] overflow-hidden sm:pt-12 lg:h-[280px] lg:pt-0 lg:flex lg:items-end">
             <div className="px-5 mb-10 sm:mb-16 sm:px-10 lg:pr-0 lg:mb-0 lg:h-full lg:flex lg:flex-col lg:justify-center">
                 <p className="font-bold text-[33px] leading-[45px] text-mainTextColor mb-4 lg:mb-5 lg:text-[28px] lg:leading-[40px]">

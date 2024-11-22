@@ -18,7 +18,7 @@ export const metadata: Metadata = {
         description: "Стоматологическая клиника Galaxy Dental Clinic в городе Астана. Команда профессионалов со стажем более 25 лет.",
         siteName: "Galaxy Dental Clinic",
         images: [{
-            url: "https://galaxy-dental-clinic.netlify.app/_next/image?url=%2Fimages%2Fhome%2Fteam.jpg&w=1920&q=75",
+            url: "https://www.galaxy-dental-clinic.kz/_next/image?url=%2Fimages%2Fhome%2Flogo.png&w=1080&q=75",
         }]
     }
 };
