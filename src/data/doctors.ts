@@ -16,11 +16,11 @@ export interface DoctorWorksInterface {
 }
 
 export const doctors: DoctorInterface[] = [
-    { id: "arman-kanatovich", name: "Арман Канатович", type: "Челюстно-лицевой хирург, \nхирург-имплантолог", img: "/images/vrachi/arman-kanatovich/profile.jpg", experience: 12, services: ["s3", "s4"] },
-    { id: "almaz-nurlanovich", name: "Алмаз Нурланович", type: "Челюстно-лицевой хирург, \nхирург-имплантолог", img: "/images/vrachi/almaz-nurlanovich/profile.jpg", experience: 12, services: ["s3", "s4"] },
-    { id: "mirat-dulatovich", name: "Мират Дулатович", type: "Ортодонт-терапевт", img: "/images/vrachi/mirat-dulatovich/profile.jpg", experience: 5, services: ["s1", "s2", "s6"] },
-    { id: "zarina-rashidovna", name: "Зарина Рашидовна", type: "Ортодонт-терапевт", img: "/images/vrachi/zarina-rashidovna/profile.jpg", experience: 5, services: ["s1", "s2", "s6"] },
-    { id: "bolat-bazylbekovich", name: "Болат Базылбекович", type: "Ортопед", img: "/images/vrachi/bolat-bazylbekovich/profile.jpg", experience: 25, services: ["s5"] }
+    { id: "arman-kanatovich", name: "Арман Канатович", type: "Челюстно-лицевой хирург, \nхирург-имплантолог", img: "/images/vrachi/arman-kanatovich/profile.jpg", experience: 12, services: ["hirurgia", "implantacziya"] },
+    { id: "almaz-nurlanovich", name: "Алмаз Нурланович", type: "Челюстно-лицевой хирург, \nхирург-имплантолог", img: "/images/vrachi/almaz-nurlanovich/profile.jpg", experience: 12, services: ["hirurgia", "implantacziya"] },
+    { id: "mirat-dulatovich", name: "Мират Дулатович", type: "Ортодонт-терапевт", img: "/images/vrachi/mirat-dulatovich/profile.jpg", experience: 5, services: ["prof-gigiena", "terapia", "ortodontia"] },
+    { id: "zarina-rashidovna", name: "Зарина Рашидовна", type: "Ортодонт-терапевт", img: "/images/vrachi/zarina-rashidovna/profile.jpg", experience: 5, services: ["prof-gigiena", "terapia", "ortodontia"] },
+    { id: "bolat-bazylbekovich", name: "Болат Базылбекович", type: "Ортопед", img: "/images/vrachi/bolat-bazylbekovich/profile.jpg", experience: 25, services: ["ortopedia"] }
 ]
 const doctorWorks: DoctorWorksInterface[] = [
     {

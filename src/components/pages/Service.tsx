@@ -27,7 +27,7 @@ const Service: React.FC<ServiceProps> = ({ service, servicePrice }) => {
 
     const breadcrumbs = [
         { label: "Главная", url: "/" },
-        { label: "Наши услуги", url: "/services" },
+        { label: "Наши услуги", url: "/uslugi" },
         { label: service.name }
     ]
 

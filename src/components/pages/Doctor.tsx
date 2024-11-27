@@ -18,7 +18,7 @@ const Doctor: React.FC<DoctorProps> = ({ doctor, doctorWorks }) => {
 
     const breadcrumbs = [
         { label: "Главная", url: "/" },
-        { label: "Наши врачи", url: "/doctors" },
+        { label: "Наши врачи", url: "/vrachi" },
         { label: doctor.name }
     ]
 
