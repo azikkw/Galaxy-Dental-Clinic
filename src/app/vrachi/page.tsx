@@ -5,9 +5,8 @@ import DoctorCard from "@/components/card/DoctorCard";
 import { doctors } from "@/data/doctors";
 
 export const metadata = {
-    title: "Наши врачи | Galaxy Dental Clinic",
-    description: "Наша команда профессионалов со стажем более 25 лет. Наши специалисты мастера в областях хирургии, имплантации, терапии, ортодонтии и ортопедии. Стоматологическая клиника Galaxy Dental Clinic в городе Астана.",
-    robots: "index, follow",
+    title: "Наши стоматологи | Стоматологическая клиника Galaxy Dental Clinic в городе Астана",
+    description: "Наша команда профессионалов со стажем более 25 лет. Наши специалисты мастера в областях хирургии, имплантации, терапии, ортодонтии и ортопедии. Стоматологическая клиника Galaxy Dental Clinic в городе Астана."
 };
 
 const breadcrumbs = [

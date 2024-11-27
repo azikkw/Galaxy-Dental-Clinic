@@ -39,27 +39,27 @@ export interface ServicePriceInterface {
 }
 
 export const services: ServiceCardInterface[] = [
-    { id: "s1", name: "Проф. гигиена", description: "Комплексная чистка и уход за зубами и деснами", icon: HygieneIcon },
-    { id: "s2", name: "Терапия", description: "Лечение кариеса, пульпита и разных инфекций", icon: TherapyIcon },
-    { id: "s3", name: "Хирургия", description: "Операция по удалению и сохранению зубов", icon: SurgeryIcon },
-    { id: "s4", name: "Имплантация", description: "Восстановление зуба с помощью импланта", icon: ImplantationIcon },
-    { id: "s5", name: "Ортопедия", description: "Восстановление зубов с помощью коронок", icon: OrthopedicsIcon },
-    { id: "s6", name: "Ортодонтия", description: "Исправление зубов и установка брекет-систем", icon: OrthodonticsIcon },
-    { id: "s7", name: "Продажи", description: "Полезные вещи для ухода за зубами и деснами", icon: SalesIcon }
+    { id: "prof-gigiena", name: "Проф. гигиена", description: "Комплексная чистка и уход за зубами и деснами", icon: HygieneIcon },
+    { id: "terapia", name: "Терапия", description: "Лечение кариеса, пульпита и разных инфекций", icon: TherapyIcon },
+    { id: "hirurgia", name: "Хирургия", description: "Операция по удалению и сохранению зубов", icon: SurgeryIcon },
+    { id: "implantacziya", name: "Имплантация", description: "Восстановление зуба с помощью импланта", icon: ImplantationIcon },
+    { id: "ortopedia", name: "Ортопедия", description: "Восстановление зубов с помощью коронок", icon: OrthopedicsIcon },
+    { id: "ortodontia", name: "Ортодонтия", description: "Исправление зубов и установка брекет-систем", icon: OrthodonticsIcon },
+    { id: "prodazhi", name: "Продажи", description: "Полезные вещи для ухода за зубами и деснами", icon: SalesIcon }
 ]
 export const servicePage: ServicesInterface[] = [
-    { id: "s1", name: "Проф. гигиена", description: "Комплексная чистка и уход за зубами и деснами", img: "/images/services/s1.png", categories: ["Проф. гигиена"] },
-    { id: "s2", name: "Терапия", description: "Лечение кариеса, пульпита и разных инфекций", img: "/images/services/s2.png", categories: ["EsCom (Юж.Корея)", "EstelitePalfique (Япония)", "Художественная реставрация", "Дополнительно"] },
-    { id: "s3", name: "Хирургия", description: "Операция по удалению и сохранению зубов", img: "/images/services/s3.png", categories: ["Хирургия", "Дополнительно"] },
-    { id: "s4", name: "Имплантация", description: "Восстановление зуба с помощью импланта", img: "/images/services/s4.png", categories: ["Имплантация", "Дополнительно"] },
-    { id: "s5", name: "Ортопедия", description: "Восстановление зубов с помощью коронок", img: "/images/services/s5.png", categories: ["Съемные конструкции", "Несъёмные конструкции", "Дополнительно"] },
-    { id: "s6", name: "Ортодонтия", description: "Исправление зубов и установка брекет-систем", img: "/images/services/s6.png", categories: ["Ортодонтия", "Детская ортодонтия"] },
-    { id: "s7", name: "Продажи", description: "Полезные вещи для ухода за зубами и деснами", img: "/images/services/s7.png", categories: ["Продажи"] },
+    { id: "prof-gigiena", name: "Проф. гигиена", description: "Комплексная чистка и уход за зубами и деснами", img: "/images/uslugi/prof-gigiena.png", categories: ["Проф. гигиена"] },
+    { id: "terapia", name: "Терапия", description: "Лечение кариеса, пульпита и разных инфекций", img: "/images/uslugi/terapia.png", categories: ["EsCom (Юж.Корея)", "EstelitePalfique (Япония)", "Художественная реставрация", "Дополнительно"] },
+    { id: "hirurgia", name: "Хирургия", description: "Операция по удалению и сохранению зубов", img: "/images/uslugi/hirurgia.png", categories: ["Хирургия", "Дополнительно"] },
+    { id: "implantacziya", name: "Имплантация", description: "Восстановление зуба с помощью импланта", img: "/images/uslugi/implantacziya.png", categories: ["Имплантация", "Дополнительно"] },
+    { id: "ortopedia", name: "Ортопедия", description: "Восстановление зубов с помощью коронок", img: "/images/uslugi/ortopedia.png", categories: ["Съемные конструкции", "Несъёмные конструкции", "Дополнительно"] },
+    { id: "ortodontia", name: "Ортодонтия", description: "Исправление зубов и установка брекет-систем", img: "/images/uslugi/ortodontia.png", categories: ["Ортодонтия", "Детская ортодонтия"] },
+    { id: "prodazhi", name: "Продажи", description: "Полезные вещи для ухода за зубами и деснами", img: "/images/uslugi/prodazhi.png", categories: ["Продажи"] },
 ]
 
 const servicesPrice: ServicePriceInterface[] = [
     {
-        id: "s1",
+        id: "prof-gigiena",
         categories: [
             {
                 name: "Проф. гигиена",
@@ -90,7 +90,7 @@ const servicesPrice: ServicePriceInterface[] = [
         ]
     },
     {
-        id: "s2",
+        id: "terapia",
         categories: [
             {
                 name: "EsCom (Юж.Корея)",
@@ -382,7 +382,7 @@ const servicesPrice: ServicePriceInterface[] = [
         ]
     },
     {
-        id: "s3",
+        id: "hirurgia",
         categories: [
             {
                 name: "Хирургия",
@@ -540,7 +540,7 @@ const servicesPrice: ServicePriceInterface[] = [
         ]
     },
     {
-        id: "s4",
+        id: "implantacziya",
         categories: [
             {
                 name: "Имплантация",
@@ -734,7 +734,7 @@ const servicesPrice: ServicePriceInterface[] = [
         ]
     },
     {
-        id: "s5",
+        id: "ortopedia",
         categories: [
             {
                 name: "Съемные конструкции",
@@ -967,7 +967,7 @@ const servicesPrice: ServicePriceInterface[] = [
         ]
     },
     {
-        id: "s6",
+        id: "ortodontia",
         categories: [
             {
                 name: "Ортодонтия",
@@ -1170,7 +1170,7 @@ const servicesPrice: ServicePriceInterface[] = [
         ]
     },
     {
-        id: "s7",
+        id: "prodazhi",
         categories: [
             {
                 name: "Продажи",

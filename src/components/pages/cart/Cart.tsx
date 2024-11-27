@@ -45,7 +45,7 @@ export default function Cart() {
                 </div>
                 <Title title="Ваша корзина пуста" className="mb-3"/>
                 <p>В вашей корзиние нету услуг. Вернитесь и добавьте их!</p>
-                <Link href={"/services"}>
+                <Link href={"/uslugi"}>
                     <Button size="sm" className="w-[195px] mt-8" aria-label="Ссылка на страницу услуг">Перейти на услуги</Button>
                 </Link>
             </section>

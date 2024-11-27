@@ -2,7 +2,7 @@ import Title from "@/components/ui/Title";
 import VideoCard from "@/components/card/VideoCard";
 
 const AboutCartSection = () => {
-    return <section id="about-cart" className="md:flex md:items-center md:justify-between md:gap-10 md:mt-5">
+    return <section id="o-korzine" className="md:flex md:items-center md:justify-between md:gap-10 md:mt-5">
         <div className="mb-7 lg:mb-3">
             <Title title="Что-за корзина?" className="mb-5"/>
             <p>Мы стремимся сделать процесс выбора услуг максимально удобным для вас. С помощью нашей корзины вы можете легко рассчитать стоимость необходимого комплекса процедур и оставить заявку прямо на сайте. Заполняя корзину, вы получите смету, которая поможет принять решение и оформить заявку на удобных для вас условиях. Также вы можете посмотреть видео о том, как ею пользоваться.</p>

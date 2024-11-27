@@ -2,7 +2,7 @@ import Title from "@/components/ui/Title";
 import Image from "next/image";
 
 const AboutSection = () => {
-    return <section id="about" className="lg:mt-5">
+    return <section id="o-klinike" className="lg:mt-5">
         <div className="lg:flex lg:items-center lg:justify-between lg:gap-10">
             <div className="mb-6 md:mb-4 lg:m-0 lg:order-2 lg:w-[500px] lg:h-[330px] lg:flex lg:flex-col lg:justify-between xl:h-[310px]">
                 <Title title="Стоматологическая клиника Galaxy Dental Clinic" className="!text-3xl !leading-10 mb-5 lg:m-0"/>

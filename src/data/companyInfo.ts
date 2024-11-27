@@ -15,11 +15,11 @@ interface CompanyInfoInterface {
 }
 
 export const navigation: NavigationInterface[] = [
-    { href: "/#about", label: "О Нас", ariaLabel: "Ссылка на секцию о нас" },
-    { href: "/doctors", label: "Наши врачи", ariaLabel: "Ссылка на страницу врачей" },
+    { href: "/#o-klinike", label: "О Нас", ariaLabel: "Ссылка на секцию о нас" },
+    { href: "/vrachi", label: "Наши врачи", ariaLabel: "Ссылка на страницу врачей" },
     { href: "/#reviews", label: "Отзывы", ariaLabel: "Ссылка на отзывы" },
-    { href: "/#about-cart", label: "Что-за корзина?", ariaLabel: "Ссылка на секцию про корзину" },
-    { href: "/services", label: "Услуги", ariaLabel: "Ссылка на страницу услуг" },
+    { href: "/#o-korzine", label: "Что-за корзина?", ariaLabel: "Ссылка на секцию про корзину" },
+    { href: "/uslugi", label: "Услуги", ariaLabel: "Ссылка на страницу услуг" },
     { href: "/#promotions", label: "Акции", promotionsAmount: 1, ariaLabel: "Ссылка на секцию акций" },
     { href: "/#contacts", label: "Контакты", ariaLabel: "Ссылка на секцию контакты" }
 ]

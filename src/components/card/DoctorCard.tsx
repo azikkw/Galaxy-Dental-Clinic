@@ -12,7 +12,7 @@ interface DoctorProps {
 }
 
 const DoctorCard: React.FC<DoctorProps> = ({ doctor, className }) => {
-    return <Link href={`/doctors/${doctor.id}`} className={cn("relative w-full block border border-mainBorderColor rounded-2xl lg:hover:border-hoverBorderColor", className)}>
+    return <Link href={`/vrachi/${doctor.id}`} className={cn("relative w-full block border border-mainBorderColor rounded-2xl lg:hover:border-hoverBorderColor", className)}>
         <p className="w-[130px] py-[7px] text-center absolute left-[18px] top-[18px] text-mainBlueColor text-[17px] font-bold bg-white rounded-[8px] lg:w-[115px] lg:text-[15.5px]">Стаж {doctor.experience} лет</p>
         <Image src={doctor.img} alt={doctor.name} width="1500" height="1500" className="w-full h-[350px] object-cover rounded-t-[15px] sm:h-[270px] md:h-[320px] lg:h-[280px]"/>
         <div className="px-[18px] py-[18px]">

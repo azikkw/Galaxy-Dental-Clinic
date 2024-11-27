@@ -7,7 +7,7 @@ interface ServiceProps {
 }
 
 const ServiceCard: React.FC<ServiceProps> = ({ service }) => {
-    return <Link href={`/services/${service.id}`} className="group !w-full block sm:w-fit p-5 rounded-[15px] bg-secondBlueColor sm:p-[25px] xl:p-[30px]">
+    return <Link href={`/uslugi/${service.id}`} className="group !w-full block sm:w-fit p-5 rounded-[15px] bg-secondBlueColor sm:p-[25px] xl:p-[30px]">
         <div className="w-full flex gap-[18px] mb-5 sm:flex-col">
             <service.icon className="size-20 rounded-[10px]"></service.icon>
             <ul className="flex-1 -mt-0.5">

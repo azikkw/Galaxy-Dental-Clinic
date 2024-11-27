@@ -7,7 +7,7 @@ import Footer from "@/components/layout/Footer";
 import StoreProvider from "@/app/StoreProvider";
 
 export const metadata: Metadata = {
-    title: "Galaxy Dental Clinic",
+    title: "Стоматологическая клиника Galaxy Dental Clinic в городе Астана",
     description: "Стоматологическая клиника Galaxy Dental Clinic в городе Астана. Мы на рынке более 4 лет, и за это время мы помогли более 10 000 пациентам. Наша команда состоит только из проффесионалов со стажем более 25 лет.",
     keywords: "Galaxy Dental Clinic, стоматологическая клиника, стоматология, стоматология астана, лечение зубов, лечение кариеса, удаление зубов, удаление зуба мудрости, имплантация зубов, установка коронок, установка брекет систем, челюстно-лицевая хирургия, dental clinic",
     robots: "index, follow",

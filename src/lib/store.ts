@@ -19,7 +19,7 @@ export const store = configureStore({
         getDefaultMiddleware({
             serializableCheck: {
                 ignoredActions: ['persist/PERSIST'],
-                ignoredPaths: ['cart.register'],
+                ignoredPaths: ['korzina.register'],
             },
         })
 })
