@@ -10,6 +10,7 @@ import TwoGisSection from "@/components/home/TwoGisSection";
 import AboutCartSection from "@/components/home/AboutCartSection";
 import ServicesSection from "@/components/home/ServicesSection";
 import ScannerSection from "@/components/home/ScannerSection";
+import PromotionsSection from "@/components/home/PromotionsSection";
 import ContactsSection from "@/components/home/ContactsSection";
 
 export default function Home() {
@@ -24,7 +25,7 @@ export default function Home() {
             <AboutCartSection/>
             <ServicesSection/>
             <ScannerSection/>
-            {/*<PromotionsSection/>*/}
+            <PromotionsSection/>
             <ContactsSection/>
         </div>
     </MainBlock>

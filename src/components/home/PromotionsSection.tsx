@@ -13,10 +13,10 @@ const PromotionsSection = () => {
                     Рассрочка 0•0•12 от <span className="text-redColor">Kaspi.kz</span>
                 </p>
                 <p className="sm:mb-3 lg:mb-7">Отличная возможность получить качественное стоматологическое обслуживание без забот о финансах!</p>
-                <p className="mb-6 lg:hidden">Акция действует <span className="font-bold">с 11 по 28 ноября</span></p>
+                <p className="mb-6 lg:hidden">Акция действует <span className="font-bold">с 1 по 19 января</span></p>
                 <Link className="lg:flex lg:items-center lg:gap-5" href="https://zapis-galaxy.pulse.is/?fbclid=PAZXh0bgNhZW0CMTEAAaYb6sxbuwYaCWSSNzivY0dG2X25qHMuGwOk_dqJTUWQrjDstcQXSQIw3v0_aem_iqEQQeZLB43S5a1VWl2vMQ" target="_blank" aria-label="Ссылка для записи">
                     <Button variant="green" size="lg" className="w-[180px] text-[17px]" aria-label="Кнопка для записи"><AppointmentIcon className="!w-5 !h-5"/> Записаться</Button>
-                    <p className="font-bold text-[17px] hidden lg:block">С 4 по 11 декабря</p>
+                    <p className="font-bold text-[17px] hidden lg:block">С 1 по 19 января</p>
                 </Link>
             </div>
             <Image src="/images/home/promotion.png" alt="Команда Galaxy Dental Clinic" width="1200" height="578" className="w-full h-[220px] object-cover sm-custom:h-auto md:-mb-3 md:-mr-10 lg:w-auto lg:h-[250px] xl:h-[265px]"/>

@@ -20,7 +20,7 @@ export const navigation: NavigationInterface[] = [
     { href: "/#reviews", label: "Отзывы", ariaLabel: "Ссылка на отзывы" },
     { href: "/#o-korzine", label: "Что-за корзина?", ariaLabel: "Ссылка на секцию про корзину" },
     { href: "/uslugi", label: "Услуги", ariaLabel: "Ссылка на страницу услуг" },
-    { href: "/#promotions", label: "Акции", promotionsAmount: 0, ariaLabel: "Ссылка на секцию акций" },
+    { href: "/#promotions", label: "Акции", promotionsAmount: 1, ariaLabel: "Ссылка на секцию акций" },
     { href: "/#contacts", label: "Контакты", ariaLabel: "Ссылка на секцию контакты" }
 ]
 export const companyInfo: CompanyInfoInterface[] = [
