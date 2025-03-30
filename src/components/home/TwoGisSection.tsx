@@ -17,8 +17,8 @@ const TwoGisSection = () => {
             <Image src="/images/home/2gis.png" alt="2ГИС" width="2500" height="700" className="w-[300px] sm:w-[400px] sm:mt-3.5 mb-[18px]"/>
             <div className="flex items-center gap-2.5">
                 <Rating amount={5} ratingClassName="gap-2.5 ml-0.5 -mt-0.5" starClassName="size-[21px]"/>
-                <span className="text-xl font-bold text-mainTextColor">4.9</span>
-                <span className="text-lg -ml-1.5">(195 оценок)</span>
+                <span className="text-xl font-bold text-mainTextColor">5.0</span>
+                <span className="text-lg -ml-1.5">(241 оценка)</span>
             </div>
         </Link>
     </section>
