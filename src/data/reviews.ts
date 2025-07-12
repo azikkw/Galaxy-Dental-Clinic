@@ -98,8 +98,38 @@ export const reviews: ReviewInterface[] = [
   },
   {
     id: "r16",
-    video: "/videos/r16.mp4",
+    video: "/videos/r16.mov",
     previewImg: "/images/preview/r16.jpg",
     personName: "Таисия",
   },
+  {
+    id: "r17",
+    video: "/videos/r17.mp4",
+    previewImg: "/images/preview/r17.jpg",
+    personName: "Зәйтуна",
+  },
+  {
+    id: "r18",
+    video: "/videos/r18.mp4",
+    previewImg: "/images/preview/r18.jpg",
+    personName: "Алина",
+  },
+  {
+    id: "r19",
+    video: "/videos/r19.mp4",
+    previewImg: "/images/preview/r19.jpg",
+    personName: "Инна",
+  },
+  {
+    id: "r20",
+    video: "/videos/r20.mp4",
+    previewImg: "/images/preview/r20.jpg",
+    personName: "Дарина",
+  },
+  {
+    id: "r21",
+    video: "/videos/r21.mp4",
+    previewImg: "/images/preview/r21.jpg",
+    personName: "Жанар"
+  }
 ];

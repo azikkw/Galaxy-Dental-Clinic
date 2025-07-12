@@ -18,7 +18,7 @@ const TwoGisSection = () => {
             <div className="flex items-center gap-2.5">
                 <Rating amount={5} ratingClassName="gap-2.5 ml-0.5 -mt-0.5" starClassName="size-[21px]"/>
                 <span className="text-xl font-bold text-mainTextColor">5.0</span>
-                <span className="text-lg -ml-1.5">(241 оценка)</span>
+                <span className="text-lg -ml-1.5">(294 оценки)</span>
             </div>
         </Link>
     </section>
